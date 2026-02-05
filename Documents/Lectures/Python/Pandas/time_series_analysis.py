@@ -89,7 +89,7 @@ summary = daily[[
 ]].dropna(subset=['moisture'])
 
 #Reset index to include date in csv
-summary_with_date = summary.reset_index()
+summary_with_data = summary.reset_index()
 
 #save
 summary_with_data.to_csv("summarized_daily_sensor_S01.csv", index = False)
