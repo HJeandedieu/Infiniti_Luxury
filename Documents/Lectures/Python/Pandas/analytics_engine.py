@@ -32,12 +32,13 @@ def compute_device_stats(df, device_id):
     }
     return device_stats
 
-def get_anomalous_readings(device_series, threshold = 2):
+def get_anomalous_readings(device_series, threshold = 3):
     # Use z-score to identify outliers
-    device_series['moisture_z'] = zscore(device_series['moisture'])
-    outliers = device_series[device_series['moisture_z'] < threshold]
-    df = device_series.drop(outliers.index)
-    return outliers, device_series
+    device_series["moisture_z"] = (
+    (device_series['moisture_level'] - device_series['moisture_level'].mean()) / device_series['moisture_level'].std()
+    )
+    anomalies = device_series[device_series['moisture_level'] > threshold]
+    return anomalies
 
 def analyze_by_zone(df, min_risk_percent = 30):
     # Use boolean indexing to find high-risk zones
@@ -45,7 +46,8 @@ def analyze_by_zone(df, min_risk_percent = 30):
     df['high_risk'] = df[df['moisture'] > min_risk_percent]
 
     return df
-device_stats = compute_device_stats(df,"DEV_001")
 
 
-pprint(device_stats)
+anomalies = get_anomalous_readings(df, 3)
+
+print(anomalies.head())
