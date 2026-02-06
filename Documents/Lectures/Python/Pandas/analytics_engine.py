@@ -37,16 +37,17 @@ def get_anomalous_readings(device_series, threshold = 3):
     device_series["moisture_z"] = (
     (device_series['moisture_level'] - device_series['moisture_level'].mean()) / device_series['moisture_level'].std()
     )
-    anomalies = device_series[device_series['moisture_level'] > threshold]
-    return anomalies
+    device_series['anomalies'] = abs(device_series['moisture_z']) > 3
+    return device_series
 
 def analyze_by_zone(df, min_risk_percent = 30):
     # Use boolean indexing to find high-risk zones
     df['min_risk'] = df[df['moisture'] < min_risk_percent]
     df['high_risk'] = df[df['moisture'] > min_risk_percent]
-
     return df
-
+def analyze_signal_health(df, min_risk_percent = 30):
+    # Boolean indexing for signal health
+    pass
 
 anomalies = get_anomalous_readings(df, 3)
 
