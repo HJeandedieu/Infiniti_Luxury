@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Gesture Space</title>
+  <style>
+    body { margin: 0; overflow: hidden; background: black; }
+  </style>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/three@0.158/build/three.min.js"></script>
+
+<script>
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(
+  75, window.innerWidth / window.innerHeight, 0.1, 1000
+);
+camera.position.z = 5;
+
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+// Stars
+const starGeo = new THREE.BufferGeometry();
+const starCount = 5000;
+const positions = [];
+
+for (let i = 0; i < starCount; i++) {
+  positions.push(
+    (Math.random() - 0.5) * 100,
+    (Math.random() - 0.5) * 100,
+    (Math.random() - 0.5) * 100
+  );
+}
+
+starGeo.setAttribute(
+  "position",
+  new THREE.Float32BufferAttribute(positions, 3)
+);
+
+const starMat = new THREE.PointsMaterial({ color: 0xffffff });
+const stars = new THREE.Points(starGeo, starMat);
+scene.add(stars);
+
+// WebSocket
+const socket = new WebSocket("ws://localhost:8765");
+
+socket.onmessage = (event) => {
+  const data = JSON.parse(event.data);
+
+  camera.position.x += data.dx;
+  camera.position.y -= data.dy;
+  camera.position.z += data.zoom;
+
+  camera.rotation.y += data.rotate * 0.05;
+};
+
+function animate() {
+  requestAnimationFrame(animate);
+  stars.rotation.y += 0.0005;
+  renderer.render(scene, camera);
+}
+
+animate();
+</script>
+</body>
+</html>
