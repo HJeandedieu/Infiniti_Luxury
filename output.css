@@ -600,28 +600,24 @@ video {
   left: 1rem;
 }
 
-.top-0 {
-  top: 0px;
-}
-
 .right-0 {
   right: 0px;
 }
 
-.top-32 {
-  top: 8rem;
-}
-
-.top-12 {
-  top: 3rem;
-}
-
-.top-6 {
-  top: 1.5rem;
+.top-0 {
+  top: 0px;
 }
 
 .top-8 {
   top: 2rem;
+}
+
+.top-4 {
+  top: 1rem;
+}
+
+.top-2 {
+  top: 0.5rem;
 }
 
 .z-10 {
@@ -727,34 +723,6 @@ video {
 
 .mt-6 {
   margin-top: 1.5rem;
-}
-
-.mt-40 {
-  margin-top: 10rem;
-}
-
-.mt-48 {
-  margin-top: 12rem;
-}
-
-.mt-\[\] {
-  margin-top: ;
-}
-
-.mt-\[20\] {
-  margin-top: 20;
-}
-
-.mt-\[20\%\] {
-  margin-top: 20%;
-}
-
-.mt-\[40\%\] {
-  margin-top: 40%;
-}
-
-.mt-\[50\%\] {
-  margin-top: 50%;
 }
 
 .mt-\[55\%\] {
@@ -871,8 +839,28 @@ video {
   width: 100%;
 }
 
-.w-12 {
-  width: 3rem;
+.w-screen {
+  width: 100vw;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.w-\[\] {
+  width: ;
+}
+
+.w-\[60\%\] {
+  width: 60%;
+}
+
+.w-\[\%\] {
+  width: %;
+}
+
+.w-\[60\%\%\] {
+  width: 60%%;
 }
 
 .max-w-\[97\%\] {
@@ -909,6 +897,10 @@ video {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
 }
 
 .gap-12 {
@@ -1061,10 +1053,6 @@ video {
   background-position: center;
 }
 
-.stroke-2 {
-  stroke-width: 2;
-}
-
 .stroke-1 {
   stroke-width: 1;
 }
@@ -1079,6 +1067,10 @@ video {
 
 .p-6 {
   padding: 1.5rem;
+}
+
+.p-10 {
+  padding: 2.5rem;
 }
 
 .px-2 {
@@ -1169,6 +1161,21 @@ video {
 .py-\[4\%\] {
   padding-top: 4%;
   padding-bottom: 4%;
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.px-40 {
+  padding-left: 10rem;
+  padding-right: 10rem;
 }
 
 .pb-12 {
@@ -1423,8 +1430,17 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.hover\:border:hover {
+  border-width: 1px;
+}
+
 .hover\:border-b:hover {
   border-bottom-width: 1px;
+}
+
+.hover\:border-black:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
 .hover\:border-b-black:hover {
@@ -1469,6 +1485,10 @@ video {
 
 .hover\:underline:hover {
   text-decoration-line: underline;
+}
+
+.hover\:underline-offset-2:hover {
+  text-underline-offset: 2px;
 }
 
 .hover\:outline:hover {
