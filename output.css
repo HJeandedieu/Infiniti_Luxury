@@ -604,6 +604,10 @@ video {
   right: 0px;
 }
 
+.right-12 {
+  right: 3rem;
+}
+
 .top-0 {
   top: 0px;
 }
@@ -614,14 +618,6 @@ video {
 
 .top-8 {
   top: 2rem;
-}
-
-.right-10 {
-  right: 2.5rem;
-}
-
-.right-12 {
-  right: 3rem;
 }
 
 .z-10 {
@@ -675,6 +671,61 @@ video {
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.mx-\[\] {
+  margin-left: ;
+  margin-right: ;
+}
+
+.mx-\[40\] {
+  margin-left: 40;
+  margin-right: 40;
+}
+
+.mx-\[40\%\] {
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+.mx-\[2\%\] {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.mx-\[20\%\] {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.mx-\[30\%\] {
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.mx-\[25\%\] {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.mx-\[0\%\] {
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+.mx-\[35\%\] {
+  margin-left: 35%;
+  margin-right: 35%;
 }
 
 .mb-1 {
@@ -925,6 +976,14 @@ video {
   border-radius: 9999px;
 }
 
+.rounded-md {
+  border-radius: 0.375rem;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
 .border {
   border-width: 1px;
 }
@@ -1053,6 +1112,10 @@ video {
   padding: 1.5rem;
 }
 
+.p-8 {
+  padding: 2rem;
+}
+
 .px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
@@ -1148,9 +1211,19 @@ video {
   padding-bottom: 4%;
 }
 
-.py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+.py-28 {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.py-36 {
+  padding-top: 9rem;
+  padding-bottom: 9rem;
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .pb-12 {
@@ -1195,6 +1268,10 @@ video {
 
 .pt-\[10\%\] {
   padding-top: 10%;
+}
+
+.pb-28 {
+  padding-bottom: 7rem;
 }
 
 .text-center {
@@ -1276,6 +1353,10 @@ video {
 
 .font-thin {
   font-weight: 100;
+}
+
+.font-\[500\] {
+  font-weight: 500;
 }
 
 .uppercase {
@@ -1413,8 +1494,16 @@ video {
   border-width: 1px;
 }
 
+.hover\:border-2:hover {
+  border-width: 2px;
+}
+
 .hover\:border-b:hover {
   border-bottom-width: 1px;
+}
+
+.hover\:border-b-2:hover {
+  border-bottom-width: 2px;
 }
 
 .hover\:border-black:hover {
@@ -1474,8 +1563,16 @@ video {
   outline-width: 2px;
 }
 
+.hover\:outline-4:hover {
+  outline-width: 4px;
+}
+
 .hover\:outline-\[rgb\(2\2c 11\2c 36\)\]:hover {
   outline-color: rgb(2,11,36);
+}
+
+.hover\:outline-black:hover {
+  outline-color: #000;
 }
 
 @media (min-width: 768px) {
