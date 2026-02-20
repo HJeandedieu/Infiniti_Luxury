@@ -608,16 +608,20 @@ video {
   top: 0px;
 }
 
+.top-2 {
+  top: 0.5rem;
+}
+
 .top-8 {
   top: 2rem;
 }
 
-.top-4 {
-  top: 1rem;
+.right-10 {
+  right: 2.5rem;
 }
 
-.top-2 {
-  top: 0.5rem;
+.right-12 {
+  right: 3rem;
 }
 
 .z-10 {
@@ -822,6 +826,10 @@ video {
   width: 50%;
 }
 
+.w-\[60\%\] {
+  width: 60%;
+}
+
 .w-\[70\%\] {
   width: 70%;
 }
@@ -837,30 +845,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-screen {
-  width: 100vw;
-}
-
-.w-auto {
-  width: auto;
-}
-
-.w-\[\] {
-  width: ;
-}
-
-.w-\[60\%\] {
-  width: 60%;
-}
-
-.w-\[\%\] {
-  width: %;
-}
-
-.w-\[60\%\%\] {
-  width: 60%%;
 }
 
 .max-w-\[97\%\] {
@@ -1069,8 +1053,9 @@ video {
   padding: 1.5rem;
 }
 
-.p-10 {
-  padding: 2.5rem;
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .px-2 {
@@ -1163,19 +1148,9 @@ video {
   padding-bottom: 4%;
 }
 
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
-
-.px-12 {
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
-
-.px-40 {
-  padding-left: 10rem;
-  padding-right: 10rem;
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .pb-12 {
@@ -1424,6 +1399,10 @@ video {
     text-align: center;
     } */
 
+.active, .dot:hover{
+  background-color:#717171;
+}
+
 .hover\:scale-110:hover {
   --tw-scale-x: 1.1;
   --tw-scale-y: 1.1;
@@ -1485,10 +1464,6 @@ video {
 
 .hover\:underline:hover {
   text-decoration-line: underline;
-}
-
-.hover\:underline-offset-2:hover {
-  text-underline-offset: 2px;
 }
 
 .hover\:outline:hover {
