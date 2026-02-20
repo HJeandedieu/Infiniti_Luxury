@@ -20,8 +20,8 @@
             <button id="vehicle_button"><a href="#" class="font-bold">Vehicles</a> </button>
             <button id="shop_button"><a href="#" class="font-bold">Shop</a></button>
             <button><a href="#"class="font-bold">Retailers</a></button>
-            <button id="shop_button"><a href="#">Owners</a></button>
-            <button id="services_button"><a href="#">Services</a></button>
+            <button id="owners_button"><a href="#">Owners</a></button>
+            <button id="service_button"><a href="#">Services</a></button>
             <button><a href="#">News and Blog</a></button>
             <button class="bg-[rgb(176,165,145)] px-3 py-2 rounded-full"><a href="build.html">Build ▷</a></button>
             <button><a href="#">EN</a></button>
@@ -33,11 +33,25 @@
     </header>
     <!-- VEHICLES DROPDOWN -->
     <section id="vehicles_dropdown"
-    class="hidden bg-[rgb(239,237,233)] bg-cover bg-center pb-32"
+    class="hidden bg-[rgb(239,237,233)] bg-cover bg-center py-32"
     style="background-image: url('/images/Home/INFINITI_Primary_HorizonGraphic_RGB_16x9_V1_min.png')" 
     >
-    <div class="mx-32">
-        <h1 class="text-4xl pt-10 pb-12">Discover Your INFINITI</h1>
+    <div class="mx-32 flex justify-between items-center">
+        <h1 class="text-4xl pb-8">Discover Your INFINITI</h1>
+        <button 
+        class="top-2 right-12 h-fit hover:border hover:border-black duration-300"
+        id="vehicle_close"
+        >
+            <svg class="w-8 stroke-1" 
+                 xmlns="http://www.w3.org/2000/svg" 
+                 fill="none"
+                 viewBox="0 0 24 24" 
+                 stroke="currentColor">
+              <path stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    d="M6 6L18 18M6 18L18 6"/>
+            </svg>
+        </button>
     </div>
 
     <!-- FLEX CONTAINER -->
@@ -91,7 +105,10 @@
 
     <!-- FLEX CONTAINER -->
     <div class="mx-40 grid grid-cols-3 gap-4 relative">
-        <button class="absolute top-8 right-0">
+        <button 
+        class="absolute top-8 right-0"
+        id="shop_close"
+        >
           <svg class="w-8 stroke-1" 
                xmlns="http://www.w3.org/2000/svg" 
                fill="none"
@@ -189,7 +206,7 @@
 
     <!-- OWNERS DROPDOWN -->
     <section id="owners_dropdown"
-    class="hidden bg-[rgb(239,237,233)] bg-cover bg-center pb-32 px-32"
+    class="hidden bg-[rgb(239,237,233)] bg-cover bg-center pb-32 px-32 py-36"
     style="background-image: url('/images/Home/INFINITI_Primary_HorizonGraphic_RGB_16x9_V1_min.png')" 
     >
         <!-- INTRO DIV -->
@@ -199,7 +216,10 @@
             <div class="flex gap-4 px-12 relative">
                 <button class="px-4 py-2 border rounded-full border-black text-white bg-[rgb(2,11,36)]">Login</button>
                 <button class="py-2 font-thin w-fit hover:border-b hover:border-b-black duration-300">Register</button>
-                <button class="absolute top-2 right-0 hover:border hover:border-black duration-300">
+                <button 
+                class="absolute top-2 right-0 hover:border hover:border-black duration-300"
+                id="owners_close"
+                >
                     <svg class="w-8 stroke-1" 
                          xmlns="http://www.w3.org/2000/svg" 
                          fill="none"
@@ -256,15 +276,18 @@
 
 
     <!-- SERVICES DROPDOWN -->
-    <section id="services_dropdown"
-    class="bg-[rgb(239,237,233)] bg-cover bg-center px-32 pb-32"
+    <section id="service_dropdown"
+    class="hidden bg-[rgb(239,237,233)] bg-cover bg-center px-32 pb-32"
     style="background-image: url('/images/Home/INFINITI_Primary_HorizonGraphic_RGB_16x9_V1_min.png')" 
     >
         <!-- INTRO DIV -->
         <div class="flex items-center justify-between py-32">
             <h1 class="text-4xl pt-10 pb-12">Service</h1>
-            <!-- LOGIN BUTTONS -->
-                <button class="top-2 right-12 hover:border hover:border-black duration-300">
+            <!-- CLOSE BUTTON -->
+                <button 
+                class="top-2 right-12 hover:border hover:border-black duration-300"
+                id="service_close"
+                >
                     <svg class="w-8 stroke-1" 
                          xmlns="http://www.w3.org/2000/svg" 
                          fill="none"
@@ -311,7 +334,7 @@
         </div>
     </section>
     <!-- ACTUAL VEHICLE MAIN CONTENT -->
-    <main id="main" class="hidden mx-32 my-12">
+    <main id="main" class="mx-32 my-12">
 
         <!-- ALL VEHICLES INTRO -->
         <div class="w-[70%]">
@@ -378,7 +401,7 @@
         </section>
     </main>
 
-    <footer id="footer" class="hidden bg-[rgb(2,11,36)] text-white">
+    <footer id="footer" class="bg-[rgb(2,11,36)] text-white">
         <div class="flex justify-between items-center py-6 px-32 border-b border-gray-600">
             <div class="">
                     <p class="w-full text-sm font-semibold">INFINITI Canada | Luxury Cars, SUVs & Crossovers</p>
@@ -463,30 +486,6 @@
             </div>
         </div>
     </footer>
-    <script>
-
-        //VEHICLES DROPDOWN
-        const vehicle_button = document.getElementById('vehicle_button');
-        const dropdown = document.getElementById('vehicles_dropdown');
-        const main = document.getElementById('main');
-        const footer = document.getElementById('footer');
-
-        vehicle_button.addEventListener('click', (e)=>{
-            e.preventDefault();
-            if(dropdown.classList.contains('hidden')){
-                dropdown.classList.remove("hidden");
-                main.classList.add("hidden");
-                footer.classList.add("hidden");
-            }else{
-                dropdown.classList.add("hidden");
-                main.classList.remove("hidden");
-                footer.classList.remove("hidden");
-            }
-        })
-
-        // SHOP DROPDOWN
-        const shop_button = document.getElementById('shop_button');
-
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>
