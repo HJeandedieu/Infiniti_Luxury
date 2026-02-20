@@ -18,12 +18,12 @@
         </div>
         <div class="drop_down flex gap-6 ">
             <button id="vehicle_button"><a href="#" class="font-bold">Vehicles</a> </button>
-            <button><a href="#" class="font-bold">Shop</a></button>
+            <button id="shop_button"><a href="#" class="font-bold">Shop</a></button>
             <button><a href="#"class="font-bold">Retailers</a></button>
-            <button><a href="#">Owners</a></button>
-            <button><a href="#">Services</a></button>
+            <button id="shop_button"><a href="#">Owners</a></button>
+            <button id="services_button"><a href="#">Services</a></button>
             <button><a href="#">News and Blog</a></button>
-            <button class="bg-[rgb(176,165,145)] px-3 py-2 rounded-full"><a href="#">Build ▷</a></button>
+            <button class="bg-[rgb(176,165,145)] px-3 py-2 rounded-full"><a href="build.html">Build ▷</a></button>
             <button><a href="#">EN</a></button>
             <svg class="w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                 <path d="M480 272C480 317.9 465.1 360.3 440 394.7L566.6 521.4C579.1 533.9 579.1 554.2 566.6 566.7C554.1 579.2 533.8 579.2 521.3 566.7L394.7 440C360.3 465.1 317.9 480 272 480C157.1 480 64 386.9 64 272C64 157.1 157.1 64 272 64C386.9 64 480 157.1 480 272zM272 416C351.5 416 416 351.5 416 272C416 192.5 351.5 128 272 128C192.5 128 128 192.5 128 272C128 351.5 192.5 416 272 416z"/>
@@ -84,7 +84,7 @@
 
     <!-- SHOP DROPDOWN -->
 
-    <section id="vehicles_dropdown"
+    <section id="shop_dropdown"
     class="hidden bg-[rgb(239,237,233)] bg-cover bg-center pb-32"
     style="background-image: url('/images/Home/INFINITI_Primary_HorizonGraphic_RGB_16x9_V1_min.png')" 
     >
@@ -188,7 +188,7 @@
     </section>
 
     <!-- OWNERS DROPDOWN -->
-    <section id="vehicles_dropdown"
+    <section id="owners_dropdown"
     class="hidden bg-[rgb(239,237,233)] bg-cover bg-center pb-32 px-32"
     style="background-image: url('/images/Home/INFINITI_Primary_HorizonGraphic_RGB_16x9_V1_min.png')" 
     >
@@ -256,7 +256,7 @@
 
 
     <!-- SERVICES DROPDOWN -->
-    <section id="vehicles_dropdown"
+    <section id="services_dropdown"
     class="bg-[rgb(239,237,233)] bg-cover bg-center px-32 pb-32"
     style="background-image: url('/images/Home/INFINITI_Primary_HorizonGraphic_RGB_16x9_V1_min.png')" 
     >
@@ -464,6 +464,8 @@
         </div>
     </footer>
     <script>
+
+        //VEHICLES DROPDOWN
         const vehicle_button = document.getElementById('vehicle_button');
         const dropdown = document.getElementById('vehicles_dropdown');
         const main = document.getElementById('main');
@@ -481,6 +483,10 @@
                 footer.classList.remove("hidden");
             }
         })
+
+        // SHOP DROPDOWN
+        const shop_button = document.getElementById('shop_button');
+
     </script>
 </body>
 </html>
