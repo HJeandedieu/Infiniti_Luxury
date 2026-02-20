@@ -712,6 +712,10 @@ video {
   display: grid;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-1\/3 {
   height: 33.333333%;
 }
@@ -863,10 +867,6 @@ video {
   border-width: 2px;
 }
 
-.border-4 {
-  border-width: 4px;
-}
-
 .border-b {
   border-bottom-width: 1px;
 }
@@ -914,10 +914,6 @@ video {
   border-color: rgb(75 85 99 / var(--tw-border-opacity));
 }
 
-.border-transparent {
-  border-color: transparent;
-}
-
 .border-r-gray-500 {
   --tw-border-opacity: 1;
   border-right-color: rgb(107 114 128 / var(--tw-border-opacity));
@@ -961,6 +957,14 @@ video {
 
 .p-6 {
   padding: 1.5rem;
+}
+
+.p-10 {
+  padding: 2.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .px-3 {
@@ -1043,6 +1047,46 @@ video {
   padding-bottom: 2%;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.py-14 {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.py-\[10\%\] {
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.py-\[5\%\] {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.py-\[1\%\] {
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.py-\[3\%\] {
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.py-\[4\%\] {
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -1083,8 +1127,20 @@ video {
   padding-top: 10%;
 }
 
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
+.pb-28 {
+  padding-bottom: 7rem;
+}
+
 .text-center {
   text-align: center;
+}
+
+.font-infiniti {
+  font-family: "Infiniti Brand Light", sans-serif;
 }
 
 .text-2xl {
@@ -1212,6 +1268,10 @@ video {
   text-underline-offset: 2px;
 }
 
+.underline-offset-4 {
+  text-underline-offset: 4px;
+}
+
 .transition-colors {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1220,6 +1280,10 @@ video {
 
 .duration-300 {
   transition-duration: 300ms;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
 }
 
 .prev, .next {
@@ -1255,17 +1319,8 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.hover\:border-2:hover {
-  border-width: 2px;
-}
-
 .hover\:border-b:hover {
   border-bottom-width: 1px;
-}
-
-.hover\:border-blue-500:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(59 130 246 / var(--tw-border-opacity));
 }
 
 .hover\:border-b-black:hover {
@@ -1315,32 +1370,8 @@ video {
   outline-width: 2px;
 }
 
-.hover\:outline-4:hover {
-  outline-width: 4px;
-}
-
-.hover\:outline-\[\]:hover {
-  outline-width: ;
-}
-
 .hover\:outline-\[rgb\(2\2c 11\2c 36\)\]:hover {
   outline-color: rgb(2,11,36);
-}
-
-.hover\:outline-\[rg\]:hover {
-  outline-color: rg;
-}
-
-.hover\:outline-\[rgb\]:hover {
-  outline-color: rgb;
-}
-
-.hover\:outline-\[rgb\(\)\]:hover {
-  outline-color: rgb();
-}
-
-.hover\:outline-\[rgb\(2\2c 11\2c \)\]:hover {
-  outline-color: rgb(2,11,);
 }
 
 @media (min-width: 768px) {

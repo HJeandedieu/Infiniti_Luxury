@@ -6,17 +6,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" type="text/css" href="output.css">
+    <link href="https://db.onlinewebfonts.com/c/996ec59bca4182de287d41943aa05cd3?family=Infiniti+Brand+Light" rel="stylesheet">
     <!-- <link rel="icon" href="images\favicon.png"> -->
     <title>INFINITI Lineup</title>
 </head>
-<body class="font-arial">
+<body class="font-infiniti">
     <header class="flex justify-between items-center bg-[rgb(239,237,233)] pr-10 border-b border-black">
         <div class="logo flex items-center gap-4 mx-4 ">
             <img src="images\Home\favicon_152x152.avif" alt="infiniti_logo" class="w-24">
             <h1 class="text-4xl"><a href="index.html">INFINITI</a></h1>
         </div>
         <div class="drop_down flex gap-6 ">
-            <button><a href="#" class="font-bold">Vehicles</a> </button>
+            <button id="vehicle_button"><a href="#" class="font-bold">Vehicles</a> </button>
             <button><a href="#" class="font-bold">Shop</a></button>
             <button><a href="#"class="font-bold">Retailers</a></button>
             <button><a href="#">Owners</a></button>
@@ -30,7 +31,56 @@
         
         </div>
     </header>
-    <main class="mx-32 my-12">
+    <!-- VEHICLES DROPDOWN -->
+    <section id="vehicles_dropdown"
+    class="hidden bg-[rgb(239,237,233)] bg-cover bg-center pb-32"
+    style="background-image: url('/images/Home/INFINITI_Primary_HorizonGraphic_RGB_16x9_V1_min.png')" 
+    >
+    <div class="mx-32">
+        <h1 class="text-4xl pt-10 pb-12">Discover Your INFINITI</h1>
+    </div>
+
+    <!-- FLEX CONTAINER -->
+    <div class="flex mx-32 justify-between">
+        <div class="py-[4%]">
+            <p class="font-bold text-sm underline underline-offset-4">All Vehicles</p>
+            <p class="text-sm font-extralight py-3">Crossovers & SUVs</p>
+            <p class="text-sm font-extralight py-3">Certified Pre-Owned</p>
+            <p class="text-sm font-extralight py-3">Future & Concept</p>
+        </div>
+
+        <!-- GRID CONTAINER -->
+        <div class="grid grid-cols-3">
+            <!-- VEHICLE ONE -->
+            <div class=" p-4 hover:bg-white duration-500">
+                <img src="images\vehicle_dropdown\infiniti-qx50-sport-trim-slate-grey.png.ximg.l_3_m.smart.avif" alt="car 1">
+                <p class="px-8">2025 QX50</p>
+            </div>
+
+            <!-- VEHICLE TWO -->
+            <div class=" p-4 hover:bg-white duration-500">
+                <img src="images\vehicle_dropdown\infiniti-qx55-sensory-trim-dynamic-sunstone-red.png.ximg.l_3_m.smart.avif" alt="car 2">
+                <p class="px-8">2025 QX55</p>
+            </div>
+
+            <!-- VEHICLE THREE -->
+            <div class=" p-4 hover:bg-white duration-500">
+                <img src="images\vehicle_dropdown\2026-infiniti-QX60-AUTOGRAPH-YCF.png.ximg.l_3_m.smart.avif" alt="car 3">
+                <p class="px-8">2026 QX60</p>
+            </div>
+
+            <!-- VEHICLE FOUR -->
+            <div class=" p-4 hover:bg-white duration-500">
+                <img src="images\vehicle_dropdown\2026-infiniti-Sport-black-and-white-xld.png.ximg.l_3_m.smart.avif" alt="car 4">
+                <p class="px-8">2026 QX60</p>
+            </div>
+        </div>
+        <div>
+
+        </div>
+    </div>
+    </section>
+    <main id="main" class="mx-32 my-12">
 
         <!-- ALL VEHICLES INTRO -->
         <div class="w-[70%]">
@@ -45,7 +95,7 @@
                 <!-- ITEM 1 -->
                 <div class="border border-gray-300 px-4 py-4">
                     <p class="text-xl font-bold">2025 QX50</p>
-                    <img class="" src="images\vehicles\infiniti-qx50-sport-trim-slate-grey.png.ximg.l_4_h.smart.avif" alt="model 1">
+                    <img src="images\vehicles\infiniti-qx50-sport-trim-slate-grey.png.ximg.l_4_h.smart.avif" alt="model 1">
                     <p class="text-sm text-gray-500 uppercase">Starting at</p>
                     <p class="text-2xl font-bold">$55,304</p>
                     <!-- BUTTONS -->
@@ -97,7 +147,7 @@
         </section>
     </main>
 
-    <footer class="bg-[rgb(2,11,36)] text-white">
+    <footer id="footer" class="bg-[rgb(2,11,36)] text-white">
         <div class="flex justify-between items-center py-6 px-32 border-b border-gray-600">
             <div class="">
                     <p class="w-full text-sm font-semibold">INFINITI Canada | Luxury Cars, SUVs & Crossovers</p>
@@ -182,6 +232,24 @@
             </div>
         </div>
     </footer>
-    <script src="index.js"></script>
+    <script>
+        const vehicle_button = document.getElementById('vehicle_button');
+        const dropdown = document.getElementById('vehicles_dropdown');
+        const main = document.getElementById('main');
+        const footer = document.getElementById('footer');
+
+        vehicle_button.addEventListener('click', (e)=>{
+            e.preventDefault();
+            if(dropdown.classList.contains('hidden')){
+                dropdown.classList.remove("hidden");
+                main.classList.add("hidden");
+                footer.classList.add("hidden");
+            }else{
+                dropdown.classList.add("hidden");
+                main.classList.remove("hidden");
+                footer.classList.remove("hidden");
+            }
+        })
+    </script>
 </body>
 </html>
