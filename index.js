@@ -130,13 +130,17 @@
 
 
 
-        const map = L.map('map').setView([-1.9441, 30.0619], 13);
+// Center of Canada
+const map = L.map('map').setView([56.1304, -106.3468], 4);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
 
-    L.marker([-1.9441, 30.0619])
-      .addTo(map)
-      .bindPopup("Kigali City")
-      .openPopup();
+// Marker in Ottawa (capital of Canada)
+L.marker([45.4215, -75.6972])
+  .addTo(map)
+  .bindPopup("Ottawa, Canada")
+  .openPopup();
+
+  
