@@ -143,4 +143,49 @@ L.marker([45.4215, -75.6972])
   .bindPopup("Ottawa, Canada")
   .openPopup();
 
-  
+
+
+  // INFINITI DISTINCTION
+  const convinience_button = document.getElementById("convinience_button");
+  const care_button = document.getElementById("care_button");
+  const confidence_button = document.getElementById("confidence_button");
+
+  const convinience_show = document.getElementById("convinience_show");
+  const care_show = document.getElementById("care_show");
+  const confidence_show = document.getElementById("confidence_show");
+
+  convinience_button.addEventListener("click",(e)=>{
+    e.preventDefault();
+
+    if(convinience_show.classList.contains("hidden")){
+        convinience_show.classList.remove("hidden");
+        convinience_show.classList.add("grid");
+        care_show.classList.remove("grid");
+        confidence_show.classList.remove("grid")
+        care_show.classList.add("hidden");
+        confidence_show.classList.add("hidden");
+    }
+})
+
+    care_show.addEventListener("click", (e)=>{
+        e.preventDefault();
+        if(care_show.classList.contains("hidden")){
+            care_show.classList.remove("hidden");
+            care_show.classList.add("grid");
+            convinience_show.classList.remove("grid");
+            confidence_show.classList.remove("grid")
+            convinience_show.classList.add("hidden");
+            confidence_show.classList.add("hidden");
+        }
+  })
+        confidence_button.addEventListener("click", (e)=>{
+            e.preventDefault();
+            if(confidence_show.classList.contains("hidden")){
+                confidence_show.classList.remove("hidden");
+                confidence_show.classList.add("grid");
+                convinience_show.classList.remove("grid");
+                care_show.classList.remove("grid")
+                convinience_show.classList.add("hidden");
+                care_show.classList.add("hidden");
+            }
+        })
