@@ -12,14 +12,16 @@
 </head>
 <body class="font-infiniti">
     <header class="flex justify-between items-center bg-[rgb(239,237,233)] pr-10 border-b border-black">
-        <div class="logo flex items-center gap-4 mx-4 ">
-            <img src="images\Home\favicon_152x152.avif" alt="infiniti_logo" class="w-24">
-            <h1 class="text-4xl"><a href="index.html">INFINITI</a></h1>
-        </div>
+        <a href="index.html">
+            <div class="logo flex items-center gap-4 mx-4 ">
+                <img src="images\Home\favicon_152x152.avif" alt="infiniti_logo" class="w-24">
+                <h1 class="text-4xl">INFINITI</h1>
+            </div>
+        </a>
         <div class="drop_down flex gap-6 ">
             <button id="vehicle_button"><a href="#" class="font-bold">Vehicles</a> </button>
             <button id="shop_button"><a href="#" class="font-bold">Shop</a></button>
-            <button><a href="#"class="font-bold">Retailers</a></button>
+            <button><a href="retailer.html"class="font-bold">Retailers</a></button>
             <button id="owners_button"><a href="#">Owners</a></button>
             <button id="service_button"><a href="#">Services</a></button>
             <button><a href="#">News and Blog</a></button>
@@ -430,22 +432,22 @@
             </div>
             <div class="infiniti_distinction">
                 <!-- INFINIT CONVINIENCE -->
-                <div class=" grid grid-cols-2 mt-16 text-white">
+                <div id="convinience_show" class="grid grid-cols-2 mt-16 text-white">
                     <div class="left-content flex justify-center mx-32 flex-col">
                         <h1 class="text-3xl mb-16">INFINITI Distinction™</h1>
                     <div class="flex justify-between border-b border-gray-500 pb-8 mb-12">
-                        <div class="text-center text-gray-400 font-extralight hover:text-white duration-300">
-                            <p>Connected </p>
-                            <p>Convinience</p>
-                        </div>
-                        <div class="text-center text-gray-400 font-extralight hover:text-white duration-300">
-                            <p>Comprehensive </p>
-                            <p>Care</p>
-                        </div>
-                        <div class="text-center text-gray-400 font-extralight hover:text-white duration-300">
-                            <p>Complete</p>
-                            <p>Confidence</p>
-                        </div>
+                        <button id="convinience_button" class="text-center text-gray-400 font-extralight hover:text-white duration-300">
+                            <span>Connected </span><br>
+                            <span>Convinience</span>
+                        </button>
+                        <button id="care_button" class="text-center text-gray-400 font-extralight hover:text-white duration-300">
+                            <span>Comprehensive</span><br>
+                            <span>Care</span>
+                        </button>
+                        <button id="confidence_button" class="text-center text-gray-400 font-extralight hover:text-white duration-300">
+                            <span>Complete</span><br>
+                            <span>Confidence</span>
+                        </button>
                     </div>
                     <div class="text">
                         <p class="leading-loose mb-12 text-lg">We strive to remove barriers from your day and empower your lifestyle by offering a suite of thoughtful services that protect one
@@ -470,19 +472,34 @@
                 </div>
 
                 <!-- INFINITI COMPREHENSIVE CARE -->
-                 <!-- <div class="comprehensive_care">
-                    <div class="left-content">
-                        <h1>INFINITI Distinction™</h1>
-                    <div class="parts">
-                        <p>Connected <br>Convinience</p>
-                        <p>Comprehensive <br>Care</p>
-                        <p>Complete <br>Confidence</p>
+                 <div id="care_show" class="hidden grid-cols-2 mt-16 text-white">
+                    <div class="left-content flex justify-center mx-32 flex-col">
+                        <h1 class="text-3xl mb-16">INFINITI Distinction™</h1>
+                    <div class="flex justify-between border-b border-gray-500 pb-8 mb-12">
+                        <button id="convinience_button" class="text-center text-gray-400 font-extralight hover:text-white duration-300">
+                            <span>Connected </span><br>
+                            <span>Convinience</span>
+                        </button>
+                        <button id="care_button" class="text-center text-gray-400 font-extralight hover:text-white duration-300">
+                            <span>Comprehensive</span><br>
+                            <span>Care</span>
+                        </button>
+                        <button id="confidence_button" class="text-center text-gray-400 font-extralight hover:text-white duration-300">
+                            <span>Complete</span><br>
+                            <span>Confidence</span>
+                        </button>
                     </div>
                     <div class="text">
-                        <p>When it’s time to service your vehicle, our INFINITI retailers go above and beyond to provide the level of care that you deserve.</p>
+                        <p class="leading-loose mb-12 text-lg">When it’s time to service your vehicle, our INFINITI retailers go above and beyond to provide the level of care that you deserve.</p>
                         <div class="buttons">
-                            <button>Explore INFINITI Distinction</button>
-                            <button>Reserve INFINITI Online</button>
+                            <div class="flex justify-between w-[50%] border border-[white] rounded-full px-3 py-2 mt-10">
+                                <p>Explore INFINITI Distinction</p>
+                                <p>	&gt;</p>
+                            </div>
+                            <div class="flex justify-between w-[50%] border border-[white] rounded-full px-3 py-2 mt-10">
+                                <p>Reserve INFINITI Online</p>
+                                <p>	&gt;</p>
+                            </div>
                         </div>
                     </div>
                     </div>
@@ -491,21 +508,36 @@
                     </div>
                 </div>
 
-                 INFINITI COMPLETE CONFIDENCE
-                 <div class="complete_confidence">
-                    <div class="left-content">
-                        <h1>INFINITI Distinction™</h1>
-                    <div class="parts">
-                        <p>Connected <br>Convinience</p>
-                        <p>Comprehensive <br>Care</p>
-                        <p>Complete <br>Confidence</p>
+                 <!-- INFINITI COMPLETE CONFIDENCE -->
+                 <div id="confidence_show" class="hidden grid-cols-2 mt-16 text-white">
+                    <div class="left-content flex justify-center mx-32 flex-col">
+                        <h1 class="text-3xl mb-16">INFINITI Distinction™</h1>
+                    <div class="flex justify-between border-b border-gray-500 pb-8 mb-12">
+                        <button id="convinience_button" class="text-center text-gray-400 font-extralight hover:text-white duration-300">
+                            <span>Connected </span><br>
+                            <span>Convinience</span>
+                        </button>
+                        <button id="care_button" class="text-center text-gray-400 font-extralight hover:text-white duration-300">
+                            <span>Comprehensive</span><br>
+                            <span>Care</span>
+                        </button>
+                        <button id="confidence_button" class="text-center text-gray-400 font-extralight hover:text-white duration-300">
+                            <span>Complete</span><br>
+                            <span>Confidence</span>
+                        </button>
                     </div>
                     <div class="text">
-                        <p>Your comfort, safety and security are top priorities for us. As our honoured guest, you can rely on INFINITI to be there 
+                        <p class="leading-loose mb-12 text-lg">Your comfort, safety and security are top priorities for us. As our honoured guest, you can rely on INFINITI to be there 
                             ­– wherever you are.</p>
                         <div class="buttons">
-                            <button>Explore INFINITI Distinction</button>
-                            <button>Reserve INFINITI Online</button>
+                            <div class="flex justify-between w-[50%] border border-[white] rounded-full px-3 py-2 mt-10">
+                                <p>Explore INFINITI Distinction</p>
+                                <p>	&gt;</p>
+                            </div>
+                            <div class="flex justify-between w-[50%] border border-[white] rounded-full px-3 py-2 mt-10">
+                                <p>Reserve INFINITI Online</p>
+                                <p>	&gt;</p>
+                            </div>
                         </div>
                     </div>
                     </div>
@@ -515,7 +547,7 @@
                 </div>
 
             </div>
-        </div> -->
+        </div>
 
         <!-- INFINITI TOP PICKS -->
         <section class="bg-cover bg-center"
