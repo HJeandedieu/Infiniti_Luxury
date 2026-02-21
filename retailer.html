@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" type="text/css" href="output.css">
     <link href="https://db.onlinewebfonts.com/c/996ec59bca4182de287d41943aa05cd3?family=Infiniti+Brand+Light" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <!-- <link rel="icon" href="images\favicon.png"> -->
     <title>INFINITI Lineup</title>
 </head>
@@ -335,6 +337,30 @@
     </section>
 
     <!-- MAIN CONTENT -->
+
+    <main id="main" class="grid grid-cols-2">
+        <!-- RIGHT CONTENT SECTION -->
+        <section class=" mx-8">
+            <div>
+                <h1 class="text-3xl font-bold my-12 ">Find an INFINITI Retailer</h1>
+                <div class="relative">
+                    <svg class="absolute top-4 left-[45%] w-6 " width="25" fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M12.442 12.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"/>
+                        <path fill-rule="evenodd" d="M8.5 14a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM15 8.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <input class="w-[50%] px-4 py-3 border border-black" type="text" placeholder="Enter a Location">
+                    <p class="my-4 text-gray-500">Please Enter Your Location</p>
+                    <p class="my-4 text-gray-500 text-sm">Discover your nearest authorized INFINITI retailer.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- LEFT CONTENT SECTION -->
+        <section id="map" class=" p-4 h-screen">
+
+        </section>
+    </main>
 
     
     <footer id="footer" class="bg-[rgb(2,11,36)] text-white">

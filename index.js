@@ -127,3 +127,16 @@
             main.classList.remove("hidden");
             footer.classList.remove("hidden");
         })
+
+
+
+        const map = L.map('map').setView([-1.9441, 30.0619], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    L.marker([-1.9441, 30.0619])
+      .addTo(map)
+      .bindPopup("Kigali City")
+      .openPopup();
