@@ -835,10 +835,6 @@ video {
   width: 2rem;
 }
 
-.w-\[10\%\] {
-  width: 10%;
-}
-
 .w-\[100\%\] {
   width: 100%;
 }
@@ -853,10 +849,6 @@ video {
 
 .w-\[25\%\] {
   width: 25%;
-}
-
-.w-\[300\%\] {
-  width: 300%;
 }
 
 .w-\[35\%\] {
@@ -894,6 +886,10 @@ video {
 
 .max-w-\[97\%\] {
   max-width: 97%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .list-inside {
@@ -970,10 +966,6 @@ video {
   border-radius: 0.375rem;
 }
 
-.rounded-sm {
-  border-radius: 0.125rem;
-}
-
 .border {
   border-width: 1px;
 }
@@ -1004,6 +996,10 @@ video {
   border-color: rgb(2 11 36 / var(--tw-border-opacity));
 }
 
+.border-\[rgba\(180\2c 177\2c 162\2c 0\.82\)\] {
+  border-color: rgba(180,177,162,0.82);
+}
+
 .border-\[white\] {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
@@ -1027,11 +1023,6 @@ video {
 .border-gray-500 {
   --tw-border-opacity: 1;
   border-color: rgb(107 114 128 / var(--tw-border-opacity));
-}
-
-.border-gray-600 {
-  --tw-border-opacity: 1;
-  border-color: rgb(75 85 99 / var(--tw-border-opacity));
 }
 
 .border-r-gray-500 {
@@ -1067,10 +1058,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-\[\] {
-  background-color: ;
 }
 
 .bg-gradient-to-b {
@@ -1357,14 +1344,13 @@ video {
   color: rgb(230 228 221 / var(--tw-text-opacity));
 }
 
+.text-\[rgba\(180\2c 177\2c 162\2c 0\.82\)\] {
+  color: rgba(180,177,162,0.82);
+}
+
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.text-gray-200 {
-  --tw-text-opacity: 1;
-  color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
 .text-gray-400 {
@@ -1389,6 +1375,10 @@ video {
 
 .underline {
   text-decoration-line: underline;
+}
+
+.decoration-1 {
+  text-decoration-thickness: 1px;
 }
 
 .underline-offset-2 {
@@ -1475,6 +1465,10 @@ video {
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.hover\:fill-gray-400:hover {
+  fill: #9ca3af;
 }
 
 .hover\:text-\[rgb\(2\2c 11\2c 36\)\]:hover {
