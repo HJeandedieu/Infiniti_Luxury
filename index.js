@@ -145,47 +145,47 @@ L.marker([45.4215, -75.6972])
 
 
 
-  // INFINITI DISTINCTION
-  const convinience_button = document.getElementById("convinience_button");
-  const care_button = document.getElementById("care_button");
-  const confidence_button = document.getElementById("confidence_button");
+// INFINITI DISTINCTION
+const convinience_button = document.getElementById("convinience_button");
+const care_button = document.getElementById("care_button");
+const confidence_button = document.getElementById("confidence_button");
 
-  const convinience_show = document.getElementById("convinience_show");
-  const care_show = document.getElementById("care_show");
-  const confidence_show = document.getElementById("confidence_show");
+const convinience_text = document.getElementById("convinience_text");
+const care_text = document.getElementById("care_text");
+const confidence_text = document.getElementById("confidence_text");
 
-  convinience_button.addEventListener("click",(e)=>{
-    e.preventDefault();
+// helper to hide all and reset active buttons
+function hideAll() {
+  convinience_text.classList.add("hidden");
+  care_text.classList.add("hidden");
+  confidence_text.classList.add("hidden");
+  convinience_button.classList.remove("active");
+  care_button.classList.remove("active");
+  confidence_button.classList.remove("active");
+}
 
-    if(convinience_show.classList.contains("hidden")){
-        convinience_show.classList.remove("hidden");
-        convinience_show.classList.add("grid");
-        care_show.classList.remove("grid");
-        confidence_show.classList.remove("grid")
-        care_show.classList.add("hidden");
-        confidence_show.classList.add("hidden");
-    }
-})
+// show convenience by default
+hideAll();
+convinience_text.classList.remove("hidden");
+convinience_button.classList.add("active");
 
-    care_show.addEventListener("click", (e)=>{
-        e.preventDefault();
-        if(care_show.classList.contains("hidden")){
-            care_show.classList.remove("hidden");
-            care_show.classList.add("grid");
-            convinience_show.classList.remove("grid");
-            confidence_show.classList.remove("grid")
-            convinience_show.classList.add("hidden");
-            confidence_show.classList.add("hidden");
-        }
-  })
-        confidence_button.addEventListener("click", (e)=>{
-            e.preventDefault();
-            if(confidence_show.classList.contains("hidden")){
-                confidence_show.classList.remove("hidden");
-                confidence_show.classList.add("grid");
-                convinience_show.classList.remove("grid");
-                care_show.classList.remove("grid")
-                convinience_show.classList.add("hidden");
-                care_show.classList.add("hidden");
-            }
-        })
+convinience_button.addEventListener("click", (e) => {
+  e.preventDefault();
+  hideAll();
+  convinience_text.classList.remove("hidden");
+  convinience_button.classList.add("active");
+});
+
+care_button.addEventListener("click", (e) => {
+  e.preventDefault();
+  hideAll();
+  care_text.classList.remove("hidden");
+  care_button.classList.add("active");
+});
+
+confidence_button.addEventListener("click", (e) => {
+  e.preventDefault();
+  hideAll();
+  confidence_text.classList.remove("hidden");
+  confidence_button.classList.add("active");
+});

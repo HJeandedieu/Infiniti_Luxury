@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" type="text/css" href="output.css">
     <link href="https://db.onlinewebfonts.com/c/996ec59bca4182de287d41943aa05cd3?family=Infiniti+Brand+Light" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <!-- <link rel="icon" href="images\favicon.png"> -->
     <title>INFINITI Canada</title>
 </head>
@@ -275,7 +277,72 @@
         </div>
     </section>
 
-
+    <!-- REGISTRATION MAIN CONTENT -->
+    <main class="bg-[rgb(239,237,233)] flex justify-center relative">
+        <div class="text-white bg-[rgb(2,11,36)] absolute w-full py-4 px-12">
+            <h1>MyINFINITI</h1>
+        </div>
+        <!-- FORM CONTAINER -->
+        <div class="bg-white flex flex-col justify-center w-[50%] px-8 py-10 my-12">
+            <div class="intro_text">
+                <h1 class="text-4xl font-semibold py-4">Register</h1>
+                <p class="text-lg py-2">The data entered below must match the information that was used to purchase the vehicle. The email and password will be used for logging into account.</p>
+            </div>
+            <form class="py-3">
+                <div>
+                    <label for="email">Email</label><br>
+                    <input class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md" type="email" name="email"><br>
+                    <label class="py-12" for="psd">Password</label><br>
+                    <input class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md" type="password" name="psd"><br>
+                    <label for="c_psd" name="c_psd">Confirm Password</label><br>
+                    <input class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md" type="text" name="c_psd"><br>
+                </div>
+                <div>
+                    <label for="salutation">Salutation</label><br>
+                    <select class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md">
+                        <option value="select Saluation" disabled hidden selected>Select Salutation</option>
+                        <option value="Mr">Mr.</option>
+                        <option value="Mrs">Mrs.</option>
+                        <option value="Ms">Ms</option>
+                        <option value="Miss">Miss</option>
+                        <option value="Co">Co.</option>
+                        <option value="Joint">Joint</option>
+                        <option value="Dr.">Dr.</option>
+                        <option value="Rev.">Rev.</option>
+                    </select>
+                    <label for="fname">FirstName</label><br>
+                    <input class="border border-black px-4 py-3 mb-6 w-full mt-1 rounded-md" type="text" name="fname"><br>
+                    <label for="lname">LastName</label><br>
+                    <input class="border border-black px-4 py-3 w-full mb-6 mt-1 rounded-md" type="text" name="lname"><br>
+                </div>
+                <div>
+                    <label for="address">Address</label><br>
+                    <input class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md" type="text" name="address"><br>
+                </div>
+                <div>
+                    <label for="telnum">Mobile Phone</label><br>
+                    <input class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md" type="tel" name="phone"><br>
+                    <label for="mobile_provider">Mobile Provider</label><br>
+                    <select class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md"><br>
+                        <option value="Select Provider" disabled selected hidden>Select Provider</option>
+                        <option value="MTN">MTN</option>
+                        <option value="AirTel">AirTel</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="lang">Preferred Language</label><br>    
+                    <select class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md">
+                        <option value="English">English</option>
+                        <option value="French">French</option>
+                    </select>
+                </div>
+                <div>
+                    <button class="bg-[rgb(2,11,36)] px-4 py-2 text-white rounded-full ">Register</button>
+                    <button class="text-[rgb(2,11,36)] border border-[rgb(2,11,36)] rounded-full px-4 py-2">Return</button>
+                </div>
+            </form>
+        </div>
+    </main>
 
     <!-- SERVICES DROPDOWN -->
     <section id="service_dropdown"
@@ -335,339 +402,12 @@
             </div>
         </div>
     </section>
-    <main id="main">
-        <div class="slide_show max-w-[97%] h-[100%] relative mx-auto mt-24">
-            <div 
-                class="bg-center bg-cover relative" 
-                style="background-image: url('images/Home/Infiniti-FebruaryRetail-PFA-Offers-QX50-QX80-ENINF-FEB-HOME-QX50S-Offers-Page-1335x455-D (1).jpg');"
-                >
-                <div class="flex flex-col justify-center items-start p-6 md:p-12 text-[rgb(230,228,221)]">
-                    <h1 class="text-3xl md:text-xl font-bold uppercase mb-4">Your next chapter</h1>
-                    <p class="text-6xl mb-1">0 <span class="font-bold text-6xl">% *</span></p>
-                    <p class="text-sm mb-1">*Starting APR on Leases</p>
-                    <p class="text-sm mb-1">*Includes a 1% INFINITI loyalty rate reduction.</p>
-                    <p class="text-sm mb-4">Plus receive up to $3,000 bonus cash on select models.</p>
-                    <p class="text-sm mb-6">Available at participating Ontario retailers.</p>
-                    <div class="bg-[rgb(176,165,145)] text-black flex justify-between w-[15%] px-4 py-3 rounded-full">
-                        <a href="#" class="">Shop Now</a>
-                        <p>></p>
-                    </div>
-                </div>
-                </div>
-            </div>
-    </main>
-
-    <section class="mx-32 mt-32">
-        <div>
-            <h1 class="font-extralight text-4xl py-4">SPECIAL OFFERS NEAR YOU</h1>
-            <div class="container flex justify-between items-center">
-                <div class="left-content flex items-center gap-4 text-xl font-thin">
-                    <div class="flex items-center">
-                        <svg class="w-8" width="100" height="100" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M7.5 13a.5.5 0 01.5-.5h4a.5.5 0 010 1H8a.5.5 0 01-.5-.5zm-2-3a.5.5 0 01.5-.5h8a.5.5 0 010 1H6a.5.5 0 01-.5-.5zm-2-3a.5.5 0 01.5-.5h12a.5.5 0 010 1H4a.5.5 0 01-.5-.5z" clip-rule="evenodd"/>
-                        </svg>
-                        <p class="">Filter</p>
-                    </div>
-                    <p>|</p>
-                    <p>8 Results</p>
-                </div>
-                <div class="right-content">
-                    <p>Postal Code <span class="underline">M5V 3L9</span></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container flex justify-between mb-32 ">
-            <div class="relative">
-                <img src="images\Offers\loyalty-tab.png" alt="loyalty">
-                <div class="absolute top-0 left-2 text-white p-2 text-sm font-semibold ">
-                    <p>Loyal Customers</p>
-                    <p class="hover:underline underline-offset-2 duration-300 hover:text-gray-400">Learn More</p>
-                </div>
-            </div>
-
-            <div class="relative">
-                <img src="images\Offers\grads-tab.png" alt="loyalty">
-                <div class="absolute top-0 left-2 text-white p-2 text-sm font-semibold ">
-                    <p>Graduates</p>
-                    <p class="hover:underline underline-offset-2 duration-300 hover:text-gray-400">Learn More</p>
-                </div>
-            </div>
-
-            <div class="relative">
-                <img src="images\Offers\newcomers-tab.png" alt="loyalty">
-                <div class="absolute top-0 left-2 text-white p-2 text-sm font-semibold ">
-                    <p>Newcomers</p>
-                    <p class="hover:underline underline-offset-2 duration-300 hover:text-gray-400">Learn More</p>
-                </div>
-            </div>
-
-            <div class="relative">
-                <img src="images\Offers\parts-accessories-tab.png" alt="loyalty">
-                <div class="absolute top-0 left-2 text-white p-2 text-sm font-semibold ">
-                    <p>Parts &</p>
-                    <p>Accessories</p>
-                    <p class="hover:underline underline-offset-2 duration-300 hover:text-gray-400">Learn More</p>
-                </div>
-            </div>   
-        </div>
-
-        <!-- FIRST COMPONENT -->
-        <div class="container flex gap-12 border-b border-gray-300">
-            <div class="left-content w-[35%] flex flex-col justify-between pb-12">
-                    <div>
-                        <p>2026</p>
-                        <p>QX80 LUXE</p>
-                        <img src="images\Offers\iris.avif" alt="Iris Vehicle">
-                    </div>
-                    <div class="text-xl font-semibold">
-                        <p>Starting from </p>
-                        <p>$112,671</p>
-                    </div>
-            </div>
-            <div class="right-content w-full my-12">
-                <div class="flex gap-4 border-b">
-                    <p class="text-2xl px-8 border-b-2 border-black">Lease</p>
-                    <p class="text-2xl px-8">Finance</p>
-                </div>
-                <div class="grid grid-cols-3 gap-8 my-12">
-                    <div>
-                        <p class="text-2xl font-extralight pb-4">Equivalent of $629/2/mo* at 2.49% APR, $2,000 INFINITI Bonus</p>
-                        <p>$2,000 Autoshow bonus available; visit a retailer for more information.</p>
-                    </div>
-                    <div>
-                        <ul class="list-inside text-gray-700 space-y-2 square-bullets">
-                            <li>Payments from $1258/mo</li>
-                            <li>51mo term</li>
-                            <li>With $9,995 down payment</li>
-                            <li>Includes 1% loyalty rate reduction</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <p>Expires March 02, 2026</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 text-xl font-extralight">
-                    <p class="px-4 py-1 ">See full details > </p>
-                    <button class="px-4 py-1 border rounded-full border-black">Estimate Payments ></button>
-                    <button class="px-4 py-1 border rounded-full border-black text-white bg-[rgb(2,11,36)]">Text Me This Offer ></button>
-                </div>
-            </div>
-        </div>
 
 
-        <!-- SECOND COMPONENT -->
-
-        <div class="container flex gap-12 border-b border-gray-300 pt-[10%]">
-            <div class="left-content w-[35%] flex flex-col justify-between pb-12">
-                    <div>
-                        <p>2026</p>
-                        <p>QX60 SPORT</p>
-                        <img src="images\Offers\iris.avif" alt="Iris Vehicle">  
-                    </div>
-                    <div class="text-xl font-semibold">
-                        <p>Starting from </p>
-                        <p>$73,509</p>
-                    </div>
-            </div>
-            <div class="right-content w-full my-12">
-                <div class="flex gap-4 border-b">
-                    <p class="text-2xl px-8 border-b-2 border-black">Lease</p>
-                </div>
-                <div class="grid grid-cols-3 gap-8 my-12">
-                    <div>
-                        <p class="text-2xl font-extralight pb-4">Equivalent of $506/2/mo* at 5.99% APR, $1,750 INFINITI Bonus</p>
-                        <p>$750 Autoshow bonus available; visit a retailer for more information.</p>
-                    </div>
-                    <div>
-                        <ul class="list-inside text-gray-700 space-y-2 square-bullets">
-                            <li>Payments from $1013/mo</li>
-                            <li>39mo term</li>
-                            <li>With $4,195 down payment</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <p>Expires March 02, 2026</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 text-xl font-extralight">
-                    <p class="px-4 py-1 ">See full details > </p>
-                    <button class="px-4 py-1 border rounded-full border-black">Estimate Payments ></button>
-                    <button class="px-4 py-1 border rounded-full border-black text-white bg-[rgb(2,11,36)]">Text Me This Offer ></button>
-                </div>
-            </div>
-        </div>
-
-        
-        <!-- THIRD COMPONENT -->
-        
-        <div class="container flex gap-12 border-b border-gray-300 pt-[10%]">
-            <div class="left-content w-[35%] flex flex-col justify-between pb-12">
-                    <div>
-                        <p>2026</p>
-                        <p>QX60 BLACK EDITION</p>
-                        <img src="images\Offers\iris.avif" alt="Iris Vehicle">
-                    </div>
-                    <div class="text-xl font-semibold">
-                        <p>Starting from </p>
-                        <p>$70,209</p>
-                    </div>
-            </div>
-            <div class="right-content w-full my-12">
-                <div class="flex gap-4 border-b">
-                    <p class="text-2xl px-8 border-b-2 border-black">Finance</p>
-                    <p class="text-2xl px-8">Cash</p>
-                </div>
-                <div class="grid grid-cols-3 gap-8 my-12">
-                    <div>
-                        <p class="text-2xl font-extralight pb-4">Equivalent of $485/2 wks* at 0% APR, $750 INFINITI Bonus</p>
-                        <p>$750 Autoshow bonus available; visit a retailer for more information.</p>
-                    </div>
-                    <div>
-                        <ul class="list-inside text-gray-700 space-y-2 square-bullets">
-                            <li>Payments from $1,051/mo</li>
-                            <li>60mo term</li>
-                            <li>With $6,495 down payment</li>
-                            <li>Includes 1% loyalty rate reduction</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <p>Expires March 02, 2026</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 text-xl font-extralight">
-                    <p class="px-4 py-1 ">See full details > </p>
-                    <button class="px-4 py-1 border rounded-full border-black">Estimate Payments ></button>
-                    <button class="px-4 py-1 border rounded-full border-black text-white bg-[rgb(2,11,36)]">Text Me This Offer ></button>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- FOURTH COMPONENT -->
-
-        <div class="container flex gap-12 border-b border-gray-300 pt-[10%]">
-            <div class="left-content w-[35%] flex flex-col justify-between pb-12">
-                    <div>
-                        <p>2026</p>
-                        <p>QX55 Essential</p>
-                        <img src="images\Offers\iris1.avif" alt="Iris Vehicle">
-                    </div>
-                    <div class="text-xl font-semibold">
-                        <p>Starting from </p>
-                        <p>$64,234</p>
-                    </div>
-            </div>
-            <div class="right-content w-full my-12">
-                <div class="flex gap-4 border-b">
-                    <p class="text-2xl px-8 border-b-2 border-black">Lease</p>
-                </div>
-                <div class="grid grid-cols-3 gap-8 my-12">
-                    <div>
-                        <p class="text-2xl font-extralight pb-4">$558/mo at 0% APR, $4,000 INFINITI Bonus</p>
-                        <p>$750 Autoshow bonus available; visit a retailer for more information.</p>
-                    </div>
-                    <div>
-                        <ul class="list-inside text-gray-700 space-y-2 square-bullets">
-                            <li>39mo term</li>
-                            <li>With $4,995 down payment</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <p>Expires March 02, 2026</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 text-xl font-extralight">
-                    <p class="px-4 py-1 ">See full details > </p>
-                    <button class="px-4 py-1 border rounded-full border-black">Estimate Payments ></button>
-                    <button class="px-4 py-1 border rounded-full border-black text-white bg-[rgb(2,11,36)]">Text Me This Offer ></button>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- FIFTH COMPONENT -->
-
-
-        <div class="container flex gap-12 border-b border-gray-300 pt-[10%]">
-            <div class="left-content w-[35%] flex flex-col justify-between pb-12">
-                    <div>
-                        <p>2025</p>
-                        <p>QX50 Pure</p>
-                        <img src="images\Offers\iris (1).avif" alt="Iris Vehicle">
-                    </div>
-                    <div class="text-xl font-semibold">
-                        <p>Starting from </p>
-                        <p>$55,304</p>
-                    </div>
-            </div>
-            <div class="right-content w-full my-12">
-                <div class="flex gap-4 border-b">
-                    <p class="text-2xl px-8 border-b-2 border-black">Lease</p>
-                </div>
-                <div class="grid grid-cols-3 gap-8 my-12">
-                    <div>
-                        <p class="text-2xl font-extralight pb-4">Equivalent of $252/2/mo* at 0% APR, $3,000 INFINITI Bonus</p>
-                        <p>$750 Autoshow bonus available; visit a retailer for more information.</p>
-                    </div>
-                    <div>
-                        <ul class="list-inside text-gray-700 space-y-2 square-bullets">
-                            <li>Payments from $504/mo</li>
-                            <li>39mo term</li>
-                            <li>With $4,995 down payment</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <p>Expires March 02, 2026</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 text-xl font-extralight">
-                    <p class="px-4 py-1 ">See full details > </p>
-                    <button class="px-4 py-1 border rounded-full border-black">Estimate Payments ></button>
-                    <button class="px-4 py-1 border rounded-full border-black text-white bg-[rgb(2,11,36)]">Text Me This Offer ></button>
-                </div>
-            </div>
-        </div>
-
-        <!-- SIXTH COMPONENT -->
-        <div class="container flex gap-12 border-b border-gray-300 pt-[10%]">
-            <div class="left-content w-[35%] flex flex-col justify-between pb-12">
-                    <div>
-                        <p>2025</p>
-                        <p>QX50 SENSORY</p>
-                        <img src="images\Offers\iris (1).avif" alt="Iris Vehicle">
-                    </div>
-                    <div class="text-xl font-semibold">
-                        <p>Starting from </p>
-                        <p>$63,554</p>
-                    </div>
-            </div>
-            <div class="right-content w-full">
-                <div class="flex gap-4 border-b">
-                    <p class="text-2xl px-8 border-b-2 border-black">Cash</p>
-                </div>
-                <div class="grid grid-cols-3 gap-8 my-12">
-                    <div>
-                        <p class="text-2xl font-extralight pb-4">$13,250 INFINITI Bonus</p>
-                    </div>
-                    <div>
-                        <p>Expires March 02, 2026</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 text-xl font-extralight">
-                    <p class="px-4 py-1 ">See full details > </p>
-                    <button class="px-4 py-1 border rounded-full border-black">Estimate Payments ></button>
-                    <button class="px-4 py-1 border rounded-full border-black text-white bg-[rgb(2,11,36)]">Text Me This Offer ></button>
-                </div>
-            </div>
-        </div>
-
-        
-    </section>
     <footer id="footer" class="bg-[rgb(2,11,36)] text-white">
         <div class="flex justify-between items-center py-6 px-32 border-b border-gray-600">
             <div class="">
-                    <p class="w-full text-sm font-semibold text-gray-200">INFINITI</p>
+                    <p class="w-full text-sm font-semibold">INFINITI Canada | Luxury Cars, SUVs & Crossovers</p>
                </div>
                 <div class="lang">
                     <select class="text-white bg-[rgb(2,11,36)]">
