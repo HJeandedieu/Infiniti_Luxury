@@ -1,10 +1,12 @@
 const express = require("express")
 const path = require("path")
 const app = express()
-const routes = require("./routes/pageRoutes.js")
+const routes = require("./routes/pageRoutes.js");
+const middleware = require("./middleware/middleware.js")
 const PORT = 3000;
 
 app.use(express.static(path.join(__dirname, "public")));
+app.use(middleware)
 
 app.use("/", routes)
 app.use((req,res)=>{
