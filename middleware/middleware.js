@@ -5,13 +5,13 @@ const logFile = path.join(__dirname, "visits.json");
 
 
 function trackVisits(req,res,next){
-    const visit = {
+    let visit = {
         path:req.originalUrl,
         method: req.method,
         timestamp: new Date().toISOString(),
         ip:req.ip,
     };
-
+    visit = JSON.stringify(visit)
     fs.appendFile(logFile, JSON.stringify(visit) + '\n', (err)=>{
         if(err){
             console.error("Couldn't log visit info");
