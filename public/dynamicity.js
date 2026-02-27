@@ -130,18 +130,18 @@
 
 
 
-// Center of Canada
-const map = L.map('map').setView([56.1304, -106.3468], 4);
+// // Center of Canada
+// const map = L.map('map').setView([56.1304, -106.3468], 4);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; OpenStreetMap contributors'
-}).addTo(map);
+// L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//   attribution: '&copy; OpenStreetMap contributors'
+// }).addTo(map);
 
-// Marker in Ottawa (capital of Canada)
-L.marker([45.4215, -75.6972])
-  .addTo(map)
-  .bindPopup("Ottawa, Canada")
-  .openPopup();
+// // Marker in Ottawa (capital of Canada)
+// L.marker([45.4215, -75.6972])
+//   .addTo(map)
+//   .bindPopup("Ottawa, Canada")
+//   .openPopup();
 
 
 
@@ -194,11 +194,15 @@ confidence_button.addEventListener("click", (e) => {
 // HAMBURGER FUNCTIONALITIES
 
 const hamburger = document.querySelector("#hamburger");
+const build = document.querySelector("#build");
 const menu = document.querySelector("#menu");
-hamburger.addEventListener('click', ()=> {
-    if(menu.classList.contains("hidden")){
-        menu.classList.remove("hidden")
-    }else{
-        menu.classList.add("hidden")
+const header = document.querySelector("#header");
+
+hamburger.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+    if(!menu.classList.contains("flex")){
+        menu.classList.add("flex")
     }
-})
+    build.classList.toggle("hidden")
+    header.classList.toggle("flex")
+});
