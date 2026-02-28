@@ -145,50 +145,50 @@
 
 
 
-// INFINITI DISTINCTION
-const convinience_button = document.getElementById("convinience_button");
-const care_button = document.getElementById("care_button");
-const confidence_button = document.getElementById("confidence_button");
+// // INFINITI DISTINCTION
+// const convinience_button = document.getElementById("convinience_button");
+// const care_button = document.getElementById("care_button");
+// const confidence_button = document.getElementById("confidence_button");
 
-const convinience_text = document.getElementById("convinience_text");
-const care_text = document.getElementById("care_text");
-const confidence_text = document.getElementById("confidence_text");
+// const convinience_text = document.getElementById("convinience_text");
+// const care_text = document.getElementById("care_text");
+// const confidence_text = document.getElementById("confidence_text");
 
-// helper to hide all and reset active buttons
-function hideAll() {
-  convinience_text.classList.add("hidden");
-  care_text.classList.add("hidden");
-  confidence_text.classList.add("hidden");
-  convinience_button.classList.remove("active");
-  care_button.classList.remove("active");
-  confidence_button.classList.remove("active");
-}
+// // helper to hide all and reset active buttons
+// function hideAll() {
+//   convinience_text.classList.add("hidden");
+//   care_text.classList.add("hidden");
+//   confidence_text.classList.add("hidden");
+//   convinience_button.classList.remove("active");
+//   care_button.classList.remove("active");
+//   confidence_button.classList.remove("active");
+// }
 
-// show convenience by default
-hideAll();
-convinience_text.classList.remove("hidden");
-convinience_button.classList.add("active");
+// // show convenience by default
+// hideAll();
+// convinience_text.classList.remove("hidden");
+// convinience_button.classList.add("active");
 
-convinience_button.addEventListener("click", (e) => {
-  e.preventDefault();
-  hideAll();
-  convinience_text.classList.remove("hidden");
-  convinience_button.classList.add("active");
-});
+// convinience_button.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   hideAll();
+//   convinience_text.classList.remove("hidden");
+//   convinience_button.classList.add("active");
+// });
 
-care_button.addEventListener("click", (e) => {
-  e.preventDefault();
-  hideAll();
-  care_text.classList.remove("hidden");
-  care_button.classList.add("active");
-});
+// care_button.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   hideAll();
+//   care_text.classList.remove("hidden");
+//   care_button.classList.add("active");
+// });
 
-confidence_button.addEventListener("click", (e) => {
-  e.preventDefault();
-  hideAll();
-  confidence_text.classList.remove("hidden");
-  confidence_button.classList.add("active");
-});
+// confidence_button.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   hideAll();
+//   confidence_text.classList.remove("hidden");
+//   confidence_button.classList.add("active");
+// });
 
 
 // HAMBURGER FUNCTIONALITIES
