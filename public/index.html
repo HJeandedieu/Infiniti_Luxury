@@ -12,12 +12,22 @@
 </head>
 <body class="font-infiniti">
     <header id="header" class="flex text-left justify-between items-center bg-[rgb(239,237,233)] px-12 border-b border-black">
-        <a href="index.html">
-            <div class="flex md:justify-center items-center gap-4 w-fit">
-                <img src="images/Home/favicon_152x152.avif" alt="infiniti_logo" class="w-24">
-                <h1 class="text-4xl">INFINITI</h1>
+        <div class="flex justify-between w-[100%] lg:w-fit">
+            <a href="index.html">
+                <div class="flex md:justify-center items-center gap-4 w-fit">
+                    <img src="images/Home/favicon_152x152.avif" alt="infiniti_logo" class="w-24">
+                    <h1 class="text-4xl">INFINITI</h1>
+                </div>
+            </a>
+            <!-- HAMBURGER -->
+            <div class="lg:hidden flex cursor-pointer">
+                <button id="build" class="px-3 py-2 rounded-full"><a href="build.html">Build ▷</a></button>
+                <svg id="hamburger" class="w-8" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 640 640">
+                    <path d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/>
+                </svg>
             </div>
-        </a>
+        </div>
+
         <div id="menu" class="hidden flex-col justify-left text-left gap-6 lg:flex lg:flex-row">
             <button class="w-fit" id="vehicle_button"><a href="#" class="font-bold">Vehicles</a> </button>
             <button class="w-fit" id="shop_button"><a href="#" class="font-bold">Shop</a></button>
@@ -34,13 +44,6 @@
             </div>
         </div>
 
-        <!-- HAMBURGER -->
-        <div class="lg:hidden flex cursor-pointer">
-            <button id="build" class="px-3 py-2 rounded-full"><a href="build.html">Build ▷</a></button>
-            <svg id="hamburger" class="w-8" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 640 640">
-                <path d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/>
-            </svg>
-        </div>
     </header>
     <!-- VEHICLES DROPDOWN -->
     <section id="vehicles_dropdown"
@@ -347,63 +350,102 @@
 
     <!-- MAIN CONTENT -->
     <main id="main">
-        <div class="slide_show max-w-[97%] h-[100%] relative mx-auto mt-24">
+        <div class="h-[100%] relative mx-auto mt-24">
             <div 
-                class="bg-center bg-cover relative" 
+                class="bg-center bg-cover relative h-[150%]" 
                 style="background-image: url('images/Home/Infiniti-FebruaryRetail-PFA-Offers-QX50-QX80-ENINF-FEB-HOME-QX50S-Offers-Page-1335x455-D (1).jpg');"
                 >
-                <div class="flex flex-col justify-center items-start p-6 md:p-12 text-[rgb(230,228,221)]">
-                    <h1 class="text-3xl md:text-xl font-bold uppercase mb-4">Your next chapter</h1>
-                    <p class="text-6xl mb-1">0 <span class="font-bold text-6xl">% *</span></p>
-                    <p class="text-sm mb-1">*Starting APR on Leases</p>
-                    <p class="text-sm mb-1">*Includes a 1% INFINITI loyalty rate reduction.</p>
-                    <p class="text-sm mb-4">Plus receive up to $3,000 bonus cash on select models.</p>
-                    <p class="text-sm mb-6">Available at participating Ontario retailers.</p>
-                    <div class="bg-[rgb(176,165,145)] text-black flex justify-between w-[15%] px-4 py-3 rounded-full">
+                <div class="flex flex-col justify-center items-start p-6 lg:p-12 lg:pb-12 pb-[35%] text-[rgb(255,255,255)]">
+                    <h1 class="lg:text-3xl font-bold uppercase mb-4">Your next chapter</h1>
+                    <p class="lg:text-6xl mb-1">0 <span class="font-bold lg:text-6xl">% *</span></p>
+                    <p class="lg:text-sm md:text-[1rem] text-xs mb-1">*Starting APR on Leases</p>
+                    <p class="lg:text-sm md:text-[1rem] text-xs mb-1">*Includes a 1% INFINITI loyalty rate reduction.</p>
+                    <p class="lg:text-sm md:text-[1rem] text-xs mb-4">Plus receive up to $3,000 bonus cash on select models.</p>
+                    <p class="lg:text-sm md:text-[1rem] text-xs mb-6">Available at participating Ontario retailers.</p>
+                    <div class="bg-[rgb(176,165,145)] text-black flex justify-between px-2 py-1 rounded-full">
                         <a href="#" class="">Shop Now</a>
-                        <p>></p>
                     </div>
                 </div>
                 </div>
             </div>
-        <div class="pb-32 bg-[rgb(2,11,36)]  border-b border-[rgb(189,184,184)]">
-            <div class="flex overflow-hidden w-[100%] h-[32rem] mt-32">
-                <div class="w-[150%] overflow-hidden relative">
-                    <img src="images\Home\infiniti-qx80-luxury-seven-passenger-full-suv-D.jpg" alt="img one" width="100%" class="hover:scale-110 duration-300">
-                    <div class="absolute bottom-4 left-4 text-white z-10">
-                        <h1 class="text-3xl font-medium pb-2">QX80</h1>
-                        <p class="text-xl font-thin">Eight-Passenger Full-size SUV</p>
-                    </div> 
-                    <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-b from white pointer-events-none"></div>
-                </div>
-                <div class="grid grid-cols-2 ">
-                    <div class="col-span-2 overflow-hidden relative">
-                        <img src="images\Home\infiniti-qx60-luxury-seven-passenger-crossover-suv-wide-v2.jpeg" alt="img two" class="hover:scale-110 duration-300">
-                        <div class="absolute bottom-4 left-4 text-white z-10">
-                        <h1 class="text-3xl font-medium pb-2">QX60</h1>
-                        <p class="font-thin">Seven-Passenger Crossover SUV</p>
-                    </div> 
-                        <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-b from white pointer-events-none"></div>
-                    </div>
-                    <div class="overflow-hidden relative">
-                        <img src="images\Home\infiniti-qx55-luxury-crossover-coupe-v2-D.avif" alt="img four" class="hover:scale-110 duration-300">
-                        <div class="absolute bottom-4 left-4 text-white z-10">
-                        <h1 class="text-3xl font-medium pb-2">QX55</h1>
-                        <p class="font-thin">Five-Passenger Crossover SUV</p>
-                    </div> 
-                        <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-b from white pointer-events-none"></div>
-                    </div>
-                    <div class="overflow-hidden relative">
-                        <img src="images\Home\infiniti-qx50-luxury-crossover-suv-v2-D.avif" alt="img four" class="hover:scale-110 duration-300">
-                        <div class="absolute bottom-4 left-4 text-white z-10">
-                        <h1 class="text-3xl font-medium pb-2">QX80</h1>
-                        <p class="font-thin">Five-Passenger Crossover SUV</p>
-                    </div> 
-                        <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-b from white pointer-events-none"></div>
-                    </div>
-                </div>
+        <div class="pb-32 bg-[rgb(2,11,36)] border-b border-[rgb(189,184,184)]">
+    <!-- Mobile: 2x2 grid; Large: custom layout -->
+    <div class="grid grid-cols-2 grid-rows-2 gap-0 mt-32 lg:grid-cols-2 lg:grid-rows-2 lg:auto-rows-fr">
+
+        <!-- LEFT BIG IMAGE -->
+        <div class="overflow-hidden relative lg:row-span-2">
+            <img src="images/Home/infiniti-qx80-luxury-seven-passenger-full-suv-D.jpg" 
+                 alt="img one" 
+                 class="hover:scale-110 duration-300 w-full h-full object-cover">
+            <div class="absolute bottom-4 left-4 text-white z-10">
+                <h1 class="lg:text-3xl text-md font-medium pb-2">QX80</h1>
+                <p class="font-thin text-sm lg:text-md">Eight-Passenger Full-size SUV</p>
+            </div> 
+            <div class="absolute bottom-0 left-0 w-full h-auto lg:h-3 bg-gradient-to-b from white pointer-events-none"></div>
+        </div>
+
+        <!-- TOP RIGHT IMAGE -->
+        <div class="overflow-hidden relative">
+            <img src="images/Home/infiniti-qx60-luxury-seven-passenger-crossover-suv-wide-v2.jpeg" 
+                 alt="img two" 
+                 class="hover:scale-110 duration-300 w-full h-full object-cover">
+            <div class="absolute bottom-4 left-4 text-white z-10">
+                <h1 class="lg:text-3xl text-md font-medium pb-2">QX60</h1>
+                <p class="font-thin text-sm lg:text-md">Seven-Passenger Crossover SUV</p>
+            </div> 
+            <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-b from white pointer-events-none"></div>
+        </div>
+
+        <!-- BOTTOM LEFT IMAGE (mobile 2x2) -->
+        <div class="overflow-hidden relative lg:hidden">
+            <img src="images/Home/infiniti-qx55-luxury-crossover-coupe-v2-D.avif" 
+                 alt="img three" 
+                 class="hover:scale-110 duration-300 w-full h-full object-cover">
+            <div class="absolute bottom-4 left-4 text-white z-10">
+                <h1 class="lg:text-3xl text-md font-medium pb-2">QX55</h1>
+                <p class="font-thin text-sm lg:text-md">Five-Passenger Crossover SUV</p>
+            </div> 
+            <div class="absolute bottom-0 left-0 w-full h-auto lg:h-1/3 bg-gradient-to-b from white pointer-events-none"></div>
+        </div>
+
+        <!-- BOTTOM RIGHT IMAGE (mobile 2x2) -->
+        <div class="overflow-hidden relative lg:hidden">
+            <img src="images/Home/infiniti-qx50-luxury-crossover-suv-v2-D.avif" 
+                 alt="img four" 
+                 class="hover:scale-110 duration-300 w-full h-full object-cover">
+            <div class="absolute bottom-4 left-4 text-white z-10">
+                <h1 class="lg:text-3xl text-md font-medium pb-2">QX50</h1>
+                <p class="font-thin text-sm lg:text-md">Five-Passenger Crossover SUV</p>
+            </div> 
+            <div class="absolute bottom-0 left-0 w-full h-auto lg:h-1/3 bg-gradient-to-b from white pointer-events-none"></div>
+        </div>
+
+        <!-- BOTTOM RIGHT CELL (large screens: last two images side by side) -->
+        <div class="hidden lg:grid grid-cols-2">
+            <div class="overflow-hidden relative">
+                <img src="images/Home/infiniti-qx55-luxury-crossover-coupe-v2-D.avif" 
+                     alt="img three" 
+                     class="hover:scale-110 duration-300 w-full h-full object-cover">
+                <div class="absolute bottom-4 left-4 text-white z-10">
+                    <h1 class="lg:text-3xl text-md font-medium pb-2">QX55</h1>
+                    <p class="font-thin text-sm lg:text-md">Five-Passenger Crossover SUV</p>
+                </div> 
+                <div class="absolute bottom-0 left-0 w-full h-auto lg:h-1/3 bg-gradient-to-b from white pointer-events-none"></div>
+            </div>
+            <div class="overflow-hidden relative">
+                <img src="images/Home/infiniti-qx50-luxury-crossover-suv-v2-D.avif" 
+                     alt="img four" 
+                     class="hover:scale-110 duration-300 w-full h-full object-cover">
+                <div class="absolute bottom-4 left-4 text-white z-10">
+                    <h1 class="lg:text-3xl text-md font-medium pb-2">QX50</h1>
+                    <p class="font-thin text-sm lg:text-md">Five-Passenger Crossover SUV</p>
+                </div> 
+                <div class="absolute bottom-0 left-0 w-full h-auto lg:h-1/3 bg-gradient-to-b from white pointer-events-none"></div>
             </div>
         </div>
+
+    </div>
+</div>
         <div class="bg-[rgb(2,11,36)]">
             <div class="links flex justify-between items-center px-32 text-white">
 
