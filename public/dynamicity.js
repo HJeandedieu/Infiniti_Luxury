@@ -206,3 +206,81 @@ hamburger.addEventListener("click", () => {
     build.classList.toggle("hidden")
     header.classList.toggle("flex")
 });
+
+
+// FOOTER MOBILE FUNCTIONALITIES
+
+
+// BUTTONS
+const learn_footer_button = document.getElementById("learn_footer_button");
+const shop_footer_button = document.getElementById("shop_footer_button");
+const purchase_footer_button = document.getElementById("purchase_footer_button");
+const ownership_footer_button = document.getElementById("ownership_footer_button");
+
+// LINKS
+
+const learn_footer_div = document.getElementById("learn_footer_div");
+const shop_footer_div = document.getElementById("shop_footer_div");
+const purchase_footer_div = document.getElementById("purchase_footer_div");
+const ownership_footer_div = document.getElementById("ownership_footer_div");
+
+
+learn_footer_button.addEventListener("click", ()=>{
+    learn_footer_div.classList.toggle("hidden");
+    if(!ownership_footer_div.classList.contains("hidden")){
+        ownership_footer_div.classList.add("hidden");
+    }
+
+    if(!shop_footer_div.classList.contains("hidden")){
+        shop_footer_div.classList.add("hidden");
+    }
+
+    if(!purchase_footer_div.classList.contains("hidden")){
+        purchase_footer_div.classList.add("hidden");
+    }
+})
+
+shop_footer_button.addEventListener("click", ()=>{
+    shop_footer_div.classList.toggle("hidden");
+    if(!ownership_footer_div.classList.contains("hidden")){
+        ownership_footer_div.classList.add("hidden");
+    }
+
+    if(!learn_footer_div.classList.contains("hidden")){
+        learn_footer_div.classList.add("hidden");
+    }
+
+    if(!purchase_footer_div.classList.contains("hidden")){
+        purchase_footer_div.classList.add("hidden");
+    }
+})
+
+purchase_footer_button.addEventListener("click", ()=>{
+    purchase_footer_div.classList.toggle("hidden");
+    if(!ownership_footer_div.classList.contains("hidden")){
+        ownership_footer_div.classList.add("hidden");
+    }
+
+    if(!learn_footer_div.classList.contains("hidden")){
+        learn_footer_div.classList.add("hidden");
+    }
+
+    if(!shop_footer_div.classList.contains("hidden")){
+        shop_footer_div.classList.add("hidden");
+    }
+})
+
+ownership_footer_button.addEventListener("click", ()=>{
+    ownership_footer_div.classList.toggle("hidden");
+    if(!shop_footer_div.classList.contains("hidden")){
+        shop_footer_div.classList.add("hidden");
+    }
+
+    if(!learn_footer_div.classList.contains("hidden")){
+        learn_footer_div.classList.add("hidden");
+    }
+
+    if(!purchase_footer_div.classList.contains("hidden")){
+        purchase_footer_div.classList.add("hidden");
+    }
+})
