@@ -1,8 +1,9 @@
 const User = require("../models/user")
+const bcrypt = require("bcryptjs")
 
 const registerUser = async(req,res) => {
     try{
-        const {name, email, password} = req.body;
+        const {name, email, password, c_psd} = req.body;
 
         // SIMPLE VALIDATION
         if(!name || !email || !password){
@@ -23,6 +24,7 @@ const registerUser = async(req,res) => {
         }
 
         // CREATE USER
+
         const user =  await User.create({
             name,
             email,
@@ -30,6 +32,7 @@ const registerUser = async(req,res) => {
         });
 
         // SEND RESPONSE
+
         res.status(201).json({
             success:true,
             message: 'User registered successfully',
