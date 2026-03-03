@@ -4,25 +4,33 @@ const path = require("path");
 
 const router = express.Router()
 
-router.get("/",(req,res)=>{
+router.get("/",(req, res)=>{
     res.sendFile(path.join(__dirname, "../public/index.html"))
 })
 
-router.get("/retailer", (req,res)=>{
+router.get("/retailer", (req, res)=>{
     res.sendFile(path.join(__dirname, "../public/retailer.html"))
 })
 
-router.get("/build",(req,res)=>{
+router.get("/build",(res)=>{
     res.sendFile(path.join(__dirname, "../public/build.html"))
 })
 
-router.get("/search-inventory",(req,res)=>{
+router.get("/search-inventory",(req, res)=>{
     res.sendFile(path.join(__dirname, "../public/search-inventory.html"))
 })
 
-router.get("/offers", (req,res)=>{
+router.get("/offers", (req, res)=>{
     res.sendFile(path.join(__dirname, "../public/offers.html"))
 })
+router.get("/register", (req, res)=>{
+    res.sendFile(path.join(__dirname, "../public/register.html"));
+})
+
+router.get("/login", (req, res)=>{
+    res.sendFile(path.join(__dirname, "../public/login.html"))
+})
 router.post("/register",registerUser)
+
 
 module.exports = router;

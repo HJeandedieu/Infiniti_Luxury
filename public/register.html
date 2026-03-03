@@ -359,14 +359,14 @@
                 <h1 class="text-4xl font-semibold py-4">Register</h1>
                 <p class="text-lg py-2">The data entered below must match the information that was used to purchase the vehicle. The email and password will be used for logging into account.</p>
             </div>
-            <form class="py-3" method="post" action="/register">
+            <form class="py-3" method="post" action="/register" autocomplete="off">
                 <div>
                     <label for="email">Email</label><br>
                     <input class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md" type="email" name="email"><br>
                     <label class="py-12" for="psd">Password</label><br>
                     <input class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md" type="password" name="password"><br>
                     <label for="c_psd" name="c_psd">Confirm Password</label><br>
-                    <input class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md" type="text" name="c_psd"><br>
+                    <input class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md" type="password" name="c_psd"><br>
                 </div>
                 <div>
                     <label for="salutation">Salutation</label><br>

@@ -1,4 +1,5 @@
 const User = require("../models/user")
+const path = require('path')
 
 const registerUser = async(req,res) => {
     try{
@@ -30,15 +31,18 @@ const registerUser = async(req,res) => {
         });
 
         // SEND RESPONSE
-        res.status(201).json({
-            success:true,
-            message: 'User registered successfully',
-            data: {
-                _id: user._id,
-                name: user.name,
-                email: user.email
-            }
-        });
+        // res.status(201).json({
+        //     success:true,
+        //     message: 'User registered successfully',
+        //     data: {
+        //         _id: user._id,
+        //         name: user.name,
+        //         email: user.email
+        //     }
+        // });
+
+        // SEND A RESPONSE
+        res.status(201).sendFile(path.join(__dirname, "../public/userRegistered.html"));
     } catch(error){
         console.error("Registration error:", error);
 
