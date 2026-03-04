@@ -1266,14 +1266,6 @@ video {
   padding-top: 10%;
 }
 
-.pl-32 {
-  padding-left: 8rem;
-}
-
-.pt-32 {
-  padding-top: 8rem;
-}
-
 .text-left {
   text-align: left;
 }
@@ -1507,6 +1499,26 @@ video {
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-gray-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-gray-900:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-gray-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[rgb\(87\2c 55\2c 28\)\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(87 55 28 / var(--tw-bg-opacity));
 }
 
 .hover\:text-\[rgb\(2\2c 11\2c 36\)\]:hover {
