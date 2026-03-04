@@ -880,10 +880,6 @@ video {
   grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
-.flex-row {
-  flex-direction: row;
-}
-
 .flex-col {
   flex-direction: column;
 }
@@ -1424,10 +1420,6 @@ video {
 
 .hover\:border-b:hover {
   border-bottom-width: 1px;
-}
-
-.hover\:border-b-2:hover {
-  border-bottom-width: 2px;
 }
 
 .hover\:border-black:hover {
