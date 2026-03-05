@@ -27,11 +27,10 @@
         .carousel::scroll-button(right), .carousel::scroll-button(left){
             content: "→";
             border: 1px solid black;
-            border-radius: 50%;
-            height:50px;
-            width:50px;
-            background-color:rgb(162, 162, 161);
-            color: white;
+            height:3rem;
+            width:3rem;
+            background-color:rgb(200,195,176);
+            color: black;
             cursor: pointer;
             position: fixed;
             position-anchor: --carousel;
@@ -54,6 +53,7 @@
             height: auto;
             overflow: hidden;
         }
+
     </style>
 </head>
 <body class="font-infiniti">
@@ -395,17 +395,17 @@
     </section>
 
     <!-- MAIN CONTENT -->
-    <main id="main">
+    <main id="main" class="bg-[rgb(239,237,233)]">
         <!-- CAROUSEL -->
         <div class="container">
-            <div class="carousel">
-                <div class="card grid grid-cols-1 lg:grid-cols-3">
+            <div class="carousel flex overflow-x-auto scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                <div class="card min-w-screen grid grid-cols-1 lg:grid-cols-3">
                     <div class="row-start-2 lg:row-start-auto lg:col-start-1 bg-[rgb(239,237,233)] py-24 px-12 flex flex-col justify-between">
                         <p class="lg:text-xl text-lg font-black">INFINITI QX50 PURE</p>
                         <p class="lg:text-6xl text-xl py-2">0 %*</p>
-                        <p class="lg:text-xl md:text-[1rem] text-xs mb-1">Starting APR on Leases*</p>
-                        <p class="lg:text-xl md:text-[1rem] text-xs mb-1">Includes a $2,250 customer bonus</p>
-                        <div class="bg-black text-white w-fit px-4 py-1 rounded-full hover:bg-[rgb(87,55,28)] duration-300">
+                        <p class="lg:text-xl md:text-[1rem] text-xs mb-1 py-2">Starting APR on Leases*</p>
+                        <p class="lg:text-xl md:text-[1rem] text-xs mb-1 py-2">Includes a $2,250 customer bonus</p>
+                        <div class="bg-black text-white w-fit px-4 py-1 rounded-full hover:bg-[rgb(87,55,28)] duration-300 my-3">
                             <a href="#">Shop Now</a>
                         </div>
                     </div>
@@ -414,15 +414,15 @@
                     </div>
                 </div>
 
-                <div class="card grid grid-cols-1 lg:grid-cols-3">
+                <div class="card min-w-screen grid grid-cols-1 lg:grid-cols-3 ">
                     <div class="row-start-2 lg:row-start-auto lg:col-start-1 bg-[rgb(239,237,233)] py-24 px-12 flex flex-col justify-between">
                         <p class="lg:text-xl text-lg font-black">2026 INFINITI QX80 LUXE</p>
                         <p class="lg:text-6xl text-xl py-2">2.49 %*</p>
-                        <p class="lg:text-xl md:text-[1rem] text-xs mb-1">Qualifying loyalty customers:</p>
-                        <p class="lg:text-xl md:text-[1rem] text-xs mb-1">Starting APR on Leases*</p>
-                        <p class="lg:text-xl md:text-[1rem] text-xs mb-1">Includes a $2,250 customer bonus</p>
-                        <p class="lg:text-xl md:text-[1rem] text-xs mb-1">Includes a 1% INFINITI loyalty rate reduction</p>
-                        <div class="bg-black text-white w-fit px-4 py-1 rounded-full hover:bg-[rgb(87,55,28)] duration-300">
+                        <p class="lg:text-xl md:text-[1rem] text-xs mb-1 py-2">Qualifying loyalty customers:</p>
+                        <p class="lg:text-xl md:text-[1rem] text-xs mb-1 py-2">Starting APR on Leases*</p>
+                        <p class="lg:text-xl md:text-[1rem] text-xs mb-1 py-2">Includes a $2,250 customer bonus</p>
+                        <p class="lg:text-xl md:text-[1rem] text-xs mb-1 py-2">Includes a 1% INFINITI loyalty rate reduction</p>
+                        <div class="bg-black text-white w-fit px-4 py-1 rounded-full hover:bg-[rgb(87,55,28)] duration-300 my-3">
                             <a href="#">Shop Now</a>
                         </div>
                     </div>
