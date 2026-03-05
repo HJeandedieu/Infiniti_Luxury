@@ -10,7 +10,50 @@
     <link rel="icon" href="images\favicon.png">
     <title>INFINITI Canada</title>
     <style>
+        .carousel{
+            width:auto;
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            anchor-name: --carousel;
+            scroll-snap-type: x mandatory;
+            
+        }
+
+        .carousel::-webkit-scrollbar{
+            display:none;
+        }
+
+        .carousel::scroll-button(right), .carousel::scroll-button(left){
+            content: "→";
+            border: 1px solid black;
+            border-radius: 50%;
+            height:50px;
+            width:50px;
+            background-color:rgb(162, 162, 161);
+            color: white;
+            cursor: pointer;
+            position: fixed;
+            position-anchor: --carousel;
+            position-area: right center;
+        }
         
+        .carousel::scroll-button(left){
+            content:"←";
+            position-area: left center;
+        }
+
+        .carousel::scroll-button(right):disabled, .carousel::scroll-button(left):disabled{
+            opacity: 0.3;
+            cursor: auto;
+        }
+
+        .card{
+            scroll-snap-align: start;
+            flex: 1 0 100%;
+            height: auto;
+            overflow: hidden;
+        }
     </style>
 </head>
 <body class="font-infiniti">
@@ -354,34 +397,38 @@
     <!-- MAIN CONTENT -->
     <main id="main">
         <!-- CAROUSEL -->
-        <div class="carousel">
-            <div class="card grid grid-cols-1 lg:grid-cols-3">
-                <div class="row-start-2 lg:row-start-auto lg:col-start-1 bg-[rgb(239,237,233)] py-24 px-12 flex flex-col justify-between">
-                    <p class="lg:text-xl text-lg font-black">INFINITI QX50 PURE</p>
-                    <p class="lg:text-6xl text-xl py-2">0 %*</p>
-                    <p class="lg:text-xl md:text-[1rem] text-xs mb-1">Starting APR on Leases*</p>
-                    <p class="lg:text-xl md:text-[1rem] text-xs mb-1">Includes a $2,250 customer bonus</p>
-                    <div class="bg-black text-white w-fit px-4 py-1 rounded-full hover:bg-[rgb(87,55,28)] duration-300">
-                        <a href="#">Shop Now</a>
+        <div class="container">
+            <div class="carousel">
+                <div class="card grid grid-cols-1 lg:grid-cols-3">
+                    <div class="row-start-2 lg:row-start-auto lg:col-start-1 bg-[rgb(239,237,233)] py-24 px-12 flex flex-col justify-between">
+                        <p class="lg:text-xl text-lg font-black">INFINITI QX50 PURE</p>
+                        <p class="lg:text-6xl text-xl py-2">0 %*</p>
+                        <p class="lg:text-xl md:text-[1rem] text-xs mb-1">Starting APR on Leases*</p>
+                        <p class="lg:text-xl md:text-[1rem] text-xs mb-1">Includes a $2,250 customer bonus</p>
+                        <div class="bg-black text-white w-fit px-4 py-1 rounded-full hover:bg-[rgb(87,55,28)] duration-300">
+                            <a href="#">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="row-start-1 lg:row-start-auto lg:col-start-2 lg:col-span-2">
+                        <img src="images/Home/landing_image.avif" alt="landing_image" class="w-full h-full object-cover">
                     </div>
                 </div>
-                <div class="row-start-1 lg:row-start-auto lg:col-start-2 lg:col-span-2">
-                    <img src="images/Home/landing_image.avif" alt="landing_image" class="w-full h-full object-cover">
-                </div>
-            </div>
 
-            <div class="card grid grid-cols-1 lg:grid-cols-3">
-                <div class="row-start-2 lg:row-start-auto lg:col-start-1 bg-[rgb(239,237,233)] py-24 px-12 flex flex-col justify-between">
-                    <p class="lg:text-xl text-lg font-black">INFINITI QX50 PURE</p>
-                    <p class="lg:text-6xl text-xl py-2">0 %*</p>
-                    <p class="lg:text-xl md:text-[1rem] text-xs mb-1">Starting APR on Leases*</p>
-                    <p class="lg:text-xl md:text-[1rem] text-xs mb-1">Includes a $2,250 customer bonus</p>
-                    <div class="bg-black text-white w-fit px-4 py-1 rounded-full hover:bg-[rgb(87,55,28)] duration-300">
-                        <a href="#">Shop Now</a>
+                <div class="card grid grid-cols-1 lg:grid-cols-3">
+                    <div class="row-start-2 lg:row-start-auto lg:col-start-1 bg-[rgb(239,237,233)] py-24 px-12 flex flex-col justify-between">
+                        <p class="lg:text-xl text-lg font-black">2026 INFINITI QX80 LUXE</p>
+                        <p class="lg:text-6xl text-xl py-2">2.49 %*</p>
+                        <p class="lg:text-xl md:text-[1rem] text-xs mb-1">Qualifying loyalty customers:</p>
+                        <p class="lg:text-xl md:text-[1rem] text-xs mb-1">Starting APR on Leases*</p>
+                        <p class="lg:text-xl md:text-[1rem] text-xs mb-1">Includes a $2,250 customer bonus</p>
+                        <p class="lg:text-xl md:text-[1rem] text-xs mb-1">Includes a 1% INFINITI loyalty rate reduction</p>
+                        <div class="bg-black text-white w-fit px-4 py-1 rounded-full hover:bg-[rgb(87,55,28)] duration-300">
+                            <a href="#">Shop Now</a>
+                        </div>
                     </div>
-                </div>
-                <div class="row-start-1 lg:row-start-auto lg:col-start-2 lg:col-span-2">
-                    <img src="images/Home/landing_image.avif" alt="landing_image" class="w-full h-full object-cover">
+                    <div class="row-start-1 lg:row-start-auto lg:col-start-2 lg:col-span-2">
+                        <img src="images/Home/landing_page2.avif" alt="landing_image" class="w-full h-full object-cover">
+                    </div>
                 </div>
             </div>
         </div>
