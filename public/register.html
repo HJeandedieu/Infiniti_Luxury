@@ -354,22 +354,22 @@
             <h1>MyINFINITI</h1>
         </div>
         <!-- FORM CONTAINER -->
-        <div class="bg-white flex flex-col justify-center w-[50%] px-8 py-10 my-12">
+        <div class="bg-white flex flex-col justify-center lg:w-[50%] lg:px-8 px-3 lg:py-10 py-4 lg:my-12 my-4">
             <div class="intro_text">
-                <h1 class="text-4xl font-semibold py-4">Register</h1>
-                <p class="text-lg py-2">The data entered below must match the information that was used to purchase the vehicle. The email and password will be used for logging into account.</p>
+                <h1 class="lg:text-4xl text-xl font-semibold pt-12">Register</h1>
+                <p class="lg:text-lg text-base py-2">The data entered below must match the information that was used to purchase the vehicle. The email and password will be used for logging into account.</p>
             </div>
             <form class="py-3" method="post" action="/register" autocomplete="off">
                 <div>
-                    <label for="email">Email</label><br>
+                    <label for="email" class="lg:text-base text-sm">Email</label><br>
                     <input class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md" type="email" name="email"><br>
-                    <label class="py-12" for="psd">Password</label><br>
+                    <label class="py-12 lg:text-base text-sm" for="psd">Password</label><br>
                     <input class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md" type="password" name="password"><br>
-                    <label for="c_psd" name="c_psd">Confirm Password</label><br>
+                    <label class="lg:text-base text-sm" for="c_psd" name="c_psd">Confirm Password</label><br>
                     <input class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md" type="password" name="c_psd"><br>
                 </div>
                 <div>
-                    <label for="salutation">Salutation</label><br>
+                    <label class="lg:text-base text-sm" for="salutation">Salutation</label><br>
                     <select class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md">
                         <option value="select Saluation" disabled hidden selected>Select Salutation</option>
                         <option value="Mr">Mr.</option>
@@ -381,19 +381,19 @@
                         <option value="Dr.">Dr.</option>
                         <option value="Rev.">Rev.</option>
                     </select>
-                    <label for="fname">FirstName</label><br>
+                    <label class="lg:text-base text-sm" for="fname">FirstName</label><br>
                     <input class="border border-black px-4 py-3 mb-6 w-full mt-1 rounded-md" type="text" name="name"><br>
-                    <label for="lname">LastName</label><br>
+                    <label class="lg:text-base text-sm" for="lname">LastName</label><br>
                     <input class="border border-black px-4 py-3 w-full mb-6 mt-1 rounded-md" type="text" name="lname"><br>
                 </div>
                 <div>
-                    <label for="address">Address</label><br>
+                    <label class="lg:text-base text-sm" for="address">Address</label><br>
                     <input class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md" type="text" name="address"><br>
                 </div>
                 <div>
-                    <label for="telnum">Mobile Phone</label><br>
+                    <label class="lg:text-base text-sm" for="telnum">Mobile Phone</label><br>
                     <input class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md" type="tel" name="phone"><br>
-                    <label for="mobile_provider">Mobile Provider</label><br>
+                    <label class="lg:text-base text-sm" for="mobile_provider">Mobile Provider</label><br>
                     <select class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md"><br>
                         <option value="Select Provider" disabled selected hidden>Select Provider</option>
                         <option value="MTN">MTN</option>
