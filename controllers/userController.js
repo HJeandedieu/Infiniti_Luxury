@@ -27,7 +27,11 @@ const registerUser = async(req,res) => {
         const user =  await User.create({
             name,
             email,
-            password
+            password,
+            address,
+            tele,
+            mobile_provider,
+            preferredLand
         });
 
         // SEND RESPONSE

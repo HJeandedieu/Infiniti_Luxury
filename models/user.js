@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({
         minlength: 6  
     },
    salutation: {
-        type: string,
+        type: String,
         required: false,
     },
     address: {
