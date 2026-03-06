@@ -3,10 +3,10 @@ const path = require('path')
 
 const registerUser = async(req,res) => {
     try{
-        const {name, email, password} = req.body;
+        const {Firstname, Lastname, email, password, address, tele, mobile_provider, preferredLand} = req.body;
 
         // SIMPLE VALIDATION
-        if(!name || !email || !password){
+        if(!Firstname || !Lastname || !email || !password){
             return res.status(400).json({
                 success:false,
                 message:"All fields are required"
@@ -25,7 +25,8 @@ const registerUser = async(req,res) => {
 
         // CREATE USER
         const user =  await User.create({
-            name,
+            Firstname,
+            Lastname,
             email,
             password,
             address,

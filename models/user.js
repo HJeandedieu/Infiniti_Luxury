@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema({
         required: false,
     },
     tele: {
-        type: number,
+        type: Number,
         required:false,
     },
     mobile_provider: {
