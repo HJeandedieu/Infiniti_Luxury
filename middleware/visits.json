@@ -22,3 +22,8 @@
 "{\"path\":\"/register\",\"method\":\"GET\",\"timestamp\":\"2026-03-03T13:52:05.976Z\",\"ip\":\"::1\"}"
 "{\"path\":\"/register\",\"method\":\"GET\",\"timestamp\":\"2026-03-03T13:53:07.804Z\",\"ip\":\"::1\"}"
 "{\"path\":\"/register\",\"method\":\"POST\",\"timestamp\":\"2026-03-03T13:54:48.920Z\",\"ip\":\"::1\"}"
+"{\"path\":\"/register\",\"method\":\"POST\",\"timestamp\":\"2026-03-05T18:02:21.575Z\",\"ip\":\"::1\"}"
+"{\"path\":\"/favicon.ico\",\"method\":\"GET\",\"timestamp\":\"2026-03-05T18:02:21.885Z\",\"ip\":\"::1\"}"
+"{\"path\":\"/register\",\"method\":\"POST\",\"timestamp\":\"2026-03-05T18:03:12.731Z\",\"ip\":\"::1\"}"
+"{\"path\":\"/register\",\"method\":\"GET\",\"timestamp\":\"2026-03-06T04:24:21.521Z\",\"ip\":\"::1\"}"
+"{\"path\":\"/register\",\"method\":\"POST\",\"timestamp\":\"2026-03-06T04:24:57.897Z\",\"ip\":\"::1\"}"
