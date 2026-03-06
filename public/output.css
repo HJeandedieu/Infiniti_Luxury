@@ -682,11 +682,6 @@ video {
   margin-right: 10%;
 }
 
-.mx-\[35\%\] {
-  margin-left: 35%;
-  margin-right: 35%;
-}
-
 .my-1 {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
@@ -725,11 +720,6 @@ video {
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-.mx-10 {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
 }
 
 .mb-1 {
@@ -1107,16 +1097,12 @@ video {
   padding: 0.5rem;
 }
 
-.p-4 {
-  padding: 1rem;
-}
-
-.p-8 {
-  padding: 2rem;
-}
-
 .p-3 {
   padding: 0.75rem;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .px-1 {
@@ -1643,9 +1629,19 @@ video {
     margin-right: 25%;
   }
 
+  .lg\:mx-\[35\%\] {
+    margin-left: 35%;
+    margin-right: 35%;
+  }
+
   .lg\:my-10 {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
+  }
+
+  .lg\:my-12 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
   }
 
   .lg\:my-32 {
@@ -1656,16 +1652,6 @@ video {
   .lg\:my-4 {
     margin-top: 1rem;
     margin-bottom: 1rem;
-  }
-
-  .lg\:my-12 {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-  }
-
-  .lg\:mx-\[35\%\] {
-    margin-left: 35%;
-    margin-right: 35%;
   }
 
   .lg\:mt-\[55\%\] {
@@ -1694,6 +1680,10 @@ video {
 
   .lg\:w-\[35\%\] {
     width: 35%;
+  }
+
+  .lg\:w-\[50\%\] {
+    width: 50%;
   }
 
   .lg\:w-\[60\%\] {
@@ -1769,6 +1759,11 @@ video {
   .lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .lg\:py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 
   .lg\:py-2 {
