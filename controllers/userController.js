@@ -1,9 +1,11 @@
 const User = require("../models/user")
-const path = require('path')
 
 const registerUser = async(req,res) => {
     try{
-        const {Firstname, Lastname, email, password, address, tele, mobile_provider, preferredLand} = req.body;
+        const {Firstname, Lastname, email, password, salutation , address, phone, mobile_provider, lang, role} = req.body;
+        
+        // COMBINE FIRST AND LAST NAME
+        const name = `${Firstname} ${Lastname}`;
 
         // SIMPLE VALIDATION
         if(!Firstname || !Lastname || !email || !password){
@@ -29,18 +31,33 @@ const registerUser = async(req,res) => {
             Lastname,
             email,
             password,
+            salutation,
             address,
             phone,
             mobile_provider,
-            lang
+            lang,
+            role: role || 'client'
         });
-        
-        // SEND A RESPONSE
-        res.status(201).sendFile(path.join(__dirname, "../public/userRegistered.html"));
+
+        // SEND RESPONSE
+        res.status(201).json({
+            success:true,
+            message: 'User registered successfully',
+            data: {
+                _id: user._id,
+                Firstname: user.Firstname,
+                Lastname: user.Lastname,
+                email: user.email,
+                role: user.role
+            }
+        });
     } catch(error){
         console.error("Registration error:", error);
 
-        res.sendFile(path.join(__dirname, "../public/internalError.html"))
+        res.status(500).json({
+            success: false,
+            message: "Internal Server Error"
+        });
     };  
 }
 

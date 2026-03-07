@@ -44,3 +44,8 @@
 "{\"path\":\"/register\",\"method\":\"GET\",\"timestamp\":\"2026-03-07T18:05:05.466Z\",\"ip\":\"::1\"}"
 "{\"path\":\"/register\",\"method\":\"POST\",\"timestamp\":\"2026-03-07T18:05:25.832Z\",\"ip\":\"::1\"}"
 "{\"path\":\"/register\",\"method\":\"POST\",\"timestamp\":\"2026-03-07T18:06:23.339Z\",\"ip\":\"::1\"}"
+"{\"path\":\"/register\",\"method\":\"GET\",\"timestamp\":\"2026-03-07T18:22:11.530Z\",\"ip\":\"::1\"}"
+"{\"path\":\"/register\",\"method\":\"POST\",\"timestamp\":\"2026-03-07T18:23:28.738Z\",\"ip\":\"::1\"}"
+"{\"path\":\"/register\",\"method\":\"POST\",\"timestamp\":\"2026-03-07T18:24:36.238Z\",\"ip\":\"::1\"}"
+"{\"path\":\"/register\",\"method\":\"GET\",\"timestamp\":\"2026-03-07T18:32:22.476Z\",\"ip\":\"::1\"}"
+"{\"path\":\"/register\",\"method\":\"POST\",\"timestamp\":\"2026-03-07T18:33:13.631Z\",\"ip\":\"::1\"}"
