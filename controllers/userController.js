@@ -30,31 +30,17 @@ const registerUser = async(req,res) => {
             email,
             password,
             address,
-            tele,
+            phone,
             mobile_provider,
-            preferredLand
+            lang
         });
-
-        // SEND RESPONSE
-        // res.status(201).json({
-        //     success:true,
-        //     message: 'User registered successfully',
-        //     data: {
-        //         _id: user._id,
-        //         name: user.name,
-        //         email: user.email
-        //     }
-        // });
-
+        
         // SEND A RESPONSE
         res.status(201).sendFile(path.join(__dirname, "../public/userRegistered.html"));
     } catch(error){
         console.error("Registration error:", error);
 
-        res.status(500).json({
-            success: false,
-            message: "Internal Server Error"
-        });
+        res.sendFile(path.join(__dirname, "../public/internalError.html"))
     };  
 }
 

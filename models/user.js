@@ -31,7 +31,7 @@ const userSchema = new mongoose.Schema({
         type:String,
         required: false,
     },
-    tele: {
+    phone: {
         type: Number,
         required:false,
     },
@@ -40,7 +40,7 @@ const userSchema = new mongoose.Schema({
         required: false,
     },
 
-    preferredLand: {
+    lang: {
         type: String,
         required: false,
     },

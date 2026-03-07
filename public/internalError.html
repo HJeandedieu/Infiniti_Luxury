@@ -21,7 +21,7 @@
             </a>
             <!-- HAMBURGER -->
             <div class="lg:hidden flex cursor-pointer">
-                <button id="build" class="px-3 py-2 rounded-full"><a href="build.html">Build ▷</a></button>
+                <button id="build" class="px-3 py-2 rounded-full"><a href="404.html">Build ▷</a></button>
                 <svg id="hamburger" class="w-8" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 640 640">
                     <path d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/>
                 </svg>
@@ -35,7 +35,7 @@
             <button class="w-fit" id="owners_button"><a href="#">Owners</a></button>
             <button class="w-fit" id="service_button"><a href="#">Services</a></button>
             <button class="w-fit"><a href="#">News and Blog</a></button>
-            <button class="bg-[rgb(176,165,145)] px-3 py-2 rounded-full w-fit"><a href="404.html">Build ▷</a></button>
+            <button class="bg-[rgb(176,165,145)] px-3 py-2 rounded-full w-fit"><a href="build.html">Build ▷</a></button>
             <div class="flex gap-4">
                 <button class="w-fit"><a href="#">EN</a></button>
                 <svg class="w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
@@ -348,71 +348,9 @@
         </div>
     </section>
 
-    <!-- REGISTRATION MAIN CONTENT -->
-    <main class="bg-[rgb(239,237,233)] flex justify-center relative">
-        <div class="text-white bg-[rgb(2,11,36)] absolute w-full py-4 px-12">
-            <h1>MyINFINITI</h1>
-        </div>
-        <!-- FORM CONTAINER -->
-        <div class="bg-white flex flex-col justify-center lg:w-[50%] lg:px-8 px-3 lg:py-10 py-4 lg:my-12 my-4">
-            <div class="intro_text">
-                <h1 class="lg:text-4xl text-xl font-semibold pt-12">Register</h1>
-                <p class="lg:text-lg text-base py-2">The data entered below must match the information that was used to purchase the vehicle. The email and password will be used for logging into account.</p>
-            </div>
-            <form class="py-3" method="post" action="/register" autocomplete="off">
-                <div>
-                    <label for="email" class="lg:text-base text-sm">Email</label><br>
-                    <input class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md" type="email" name="email"><br>
-                    <label class="py-12 lg:text-base text-sm" for="psd">Password</label><br>
-                    <input class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md" type="password" name="password"><br>
-                    <label class="lg:text-base text-sm" for="c_psd">Role (client / retailer)</label><br>
-                    <input class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md" type="text" name="role"><br>
-                </div>
-                <div>
-                    <label class="lg:text-base text-sm" for="salutation">Salutation</label><br>
-                    <select class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md" name="salutation">
-                        <option value="select Saluation" disabled hidden selected>Select Salutation</option>
-                        <option value="Mr">Mr.</option>
-                        <option value="Mrs">Mrs.</option>
-                        <option value="Ms">Ms</option>
-                        <option value="Miss">Miss</option>
-                        <option value="Co">Co.</option>
-                        <option value="Joint">Joint</option>
-                        <option value="Dr.">Dr.</option>
-                        <option value="Rev.">Rev.</option>
-                    </select>
-                    <label class="lg:text-base text-sm" for="fname">FirstName</label><br>
-                    <input class="border border-black px-4 py-3 mb-6 w-full mt-1 rounded-md" type="text" name="Firstname"><br>
-                    <label class="lg:text-base text-sm" for="lname">LastName</label><br>
-                    <input class="border border-black px-4 py-3 w-full mb-6 mt-1 rounded-md" type="text" name="Lastname"><br>
-                </div>
-                <div>
-                    <label class="lg:text-base text-sm" for="address">Address</label><br>
-                    <input class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md" type="text" name="address"><br>
-                </div>
-                <div>
-                    <label class="lg:text-base text-sm" for="telnum">Mobile Phone</label><br>
-                    <input class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md" type="tel" name="phone"><br>
-                    <label class="lg:text-base text-sm" for="mobile_provider">Mobile Provider</label><br>
-                    <select class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md" name="mobile_provider"><br>
-                        <option value="Select Provider" disabled selected hidden>Select Provider</option>
-                        <option value="MTN">MTN</option>
-                        <option value="AirTel">AirTel</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="lang">Preferred Language</label><br>    
-                    <select class="border border-black px-4 py-3 mb-6 mt-1 w-full rounded-md" name="lang">
-                        <option value="English">English</option>
-                        <option value="French">French</option>
-                    </select>
-                </div>
-                <div>
-                    <button class="bg-[rgb(2,11,36)] px-4 py-2 text-white rounded-full ">Register</button>
-                    <button class="text-[rgb(2,11,36)] border border-[rgb(2,11,36)] rounded-full px-4 py-2">Return</button>
-                </div>
-            </form>
-        </div>
+    <main id="main" class="flex flex-col h-[30rem] justify-center items-center">
+        <h1 class="lg:text-6xl text-xl md:text-lg">INTERNAL SERVER ERROR</h1>
+        <button class=" my-12 px-4 py-1 border rounded-full border-black text-white bg-[rgb(2,11,36)]"><a href="index.html">Home</a></button>
     </main>
 
     <footer id="footer" class="bg-[rgb(2,11,36)] text-white">
