@@ -3,696 +3,461 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    <title>Retailer Dashboard | INFINITI Canada</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Client Dashboard | INFINITI Canada</title>
     <style>
         :root {
-            --bg: #0D1117;
-            --surface: #161B22;
-            --surface2: #1C2330;
-            --border: rgba(255,255,255,0.07);
-            --border2: rgba(255,255,255,0.12);
-            --text: #E8E6E1;
-            --muted: #6B7280;
-            --accent: #B0A591;
-            --gold: #C9A84C;
-            --green: #22C55E;
-            --red: #EF4444;
-            --amber: #F59E0B;
+            --sand: #EFEDE9;
             --navy: #020B24;
+            --warm-white: #FAF9F7;
+            --muted: #8A8780;
+            --border: rgba(0,0,0,0.08);
+            --accent: #B0A591;
+            --card: #FFFFFF;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--sand); color: var(--navy); }
 
-        /* HEADER — shared brand style */
+        /* HEADER */
         header {
             position: sticky; top: 0; z-index: 100;
             background: rgba(239,237,233,0.88);
             backdrop-filter: blur(18px);
-            border-bottom: 1px solid rgba(0,0,0,0.08);
+            border-bottom: 1px solid var(--border);
             padding: 0 48px; height: 72px;
             display: flex; align-items: center; justify-content: space-between;
         }
         .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--navy); }
-        .logo img { width: 46px; filter: none; opacity: 1; }
-        .logo-text { display: flex; flex-direction: column; }
-        .logo-text span:first-child { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 500; letter-spacing: 0.2em; color: var(--navy); }
-        .logo-text span:last-child { font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-top: -2px; }
-        .header-right { display: flex; align-items: center; gap: 20px; }
-        .header-right a { text-decoration: none; color: var(--navy); font-size: 13px; opacity: 0.65; transition: opacity 0.2s; }
-        .header-right a:hover { opacity: 1; }
-        .notif-btn {
-            position: relative; background: #fff; border: 1px solid rgba(0,0,0,0.12);
-            border-radius: 8px; width: 36px; height: 36px;
-            display: flex; align-items: center; justify-content: center; cursor: pointer;
+        .logo img { width: 46px; }
+        .logo span { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 500; letter-spacing: 0.2em; }
+        nav { display: flex; align-items: center; gap: 28px; }
+        nav a { text-decoration: none; color: var(--navy); font-size: 13px; opacity: 0.65; transition: opacity 0.2s; }
+        nav a:hover { opacity: 1; }
+        .btn-pill {
+            padding: 8px 20px; border-radius: 999px; font-size: 12px;
+            letter-spacing: 0.05em; text-decoration: none; cursor: pointer;
+            transition: all 0.2s; border: none;
         }
-        .notif-btn svg { width: 16px; height: 16px; color: var(--navy); opacity: 0.6; }
-        .notif-dot { position: absolute; top: 7px; right: 7px; width: 7px; height: 7px; background: var(--gold); border-radius: 50%; border: 1.5px solid #EFEDE9; }
+        .btn-dark { background: var(--navy); color: #fff; }
+        .btn-dark:hover { background: #1a2a4a; }
+        .btn-outline { background: transparent; color: var(--navy); border: 1px solid rgba(0,0,0,0.25); }
+        .btn-outline:hover { border-color: var(--navy); background: var(--sand); }
         .user-chip {
             display: flex; align-items: center; gap: 8px;
-            background: #fff; border: 1px solid rgba(0,0,0,0.1);
-            padding: 5px 12px 5px 6px; border-radius: 999px; cursor: pointer;
+            background: var(--card); border: 1px solid var(--border);
+            padding: 6px 14px 6px 8px; border-radius: 999px; font-size: 12px;
         }
-        .user-avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: #fff; }
-        .user-chip span { font-size: 13px; color: var(--navy); }
-        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; color: var(--navy); }
-
-        /* SIDEBAR + LAYOUT */
-        .layout { display: flex; min-height: calc(100vh - 72px); }
-
-        .sidebar {
-            width: 220px; flex-shrink: 0;
-            background: var(--surface);
-            border-right: 1px solid var(--border);
-            padding: 24px 0;
-            position: sticky; top: 72px;
-            height: calc(100vh - 72px);
-            overflow-y: auto;
+        .user-avatar {
+            width: 28px; height: 28px; border-radius: 50%;
+            background: var(--navy); color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 11px; font-weight: 500; letter-spacing: 0.05em;
         }
+        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
 
-        .sidebar-section { margin-bottom: 24px; }
-        .sidebar-section-label { font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); padding: 0 20px 8px; }
-        .sidebar-link {
-            display: flex; align-items: center; gap: 10px;
-            padding: 9px 20px; font-size: 13px; color: var(--muted);
-            text-decoration: none; cursor: pointer;
-            transition: background 0.15s, color 0.15s;
-            border-left: 2px solid transparent;
+        /* HERO */
+        .hero {
+            background: var(--navy); color: #fff;
+            padding: 60px 48px 52px; position: relative; overflow: hidden;
         }
-        .sidebar-link:hover { background: rgba(255,255,255,0.04); color: var(--text); }
-        .sidebar-link.active { background: rgba(201,168,76,0.08); color: var(--gold); border-left-color: var(--gold); }
-        .sidebar-link svg { width: 15px; height: 15px; flex-shrink: 0; }
-        .sidebar-badge { margin-left: auto; background: var(--gold); color: #000; font-size: 10px; font-weight: 600; padding: 1px 7px; border-radius: 999px; }
-        .sidebar-badge.red { background: var(--red); color: #fff; }
-
-        /* MAIN CONTENT */
-        .content { flex: 1; padding: 32px; overflow-x: hidden; }
-
-        /* PAGE HEADER */
-        .page-header { margin-bottom: 28px; }
-        .page-header h1 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; margin-bottom: 4px; }
-        .page-header p { font-size: 13px; color: var(--muted); }
-        .page-header-row { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; }
-        .header-actions { display: flex; gap: 10px; }
-        .btn { padding: 9px 20px; border-radius: 8px; font-size: 13px; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; transition: all 0.2s; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; }
-        .btn-gold { background: var(--gold); color: #000; font-weight: 500; }
-        .btn-gold:hover { background: #dab84a; }
-        .btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border2); }
-        .btn-secondary:hover { border-color: rgba(255,255,255,0.25); }
-        .btn svg { width: 14px; height: 14px; }
-
-        /* KPI STRIP */
-        .kpi-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 24px; }
-        .kpi {
-            background: var(--surface); border: 1px solid var(--border);
-            border-radius: 10px; padding: 20px;
-            transition: border-color 0.2s;
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: url('images/Home/INFINITI_Primary_HorizonGraphic_RGB_16x9_V1_min.png') center/cover;
+            opacity: 0.07;
         }
-        .kpi:hover { border-color: var(--border2); }
-        .kpi-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
-        .kpi-value { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 400; line-height: 1; margin-bottom: 6px; }
-        .kpi-delta { font-size: 11px; display: flex; align-items: center; gap: 4px; }
-        .kpi-delta.up { color: var(--green); }
-        .kpi-delta.down { color: var(--red); }
-        .kpi-delta.neutral { color: var(--muted); }
-
-        /* GRID LAYOUTS */
-        .g2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-bottom: 20px; }
-        .g3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-bottom: 20px; }
-        .g-wide { display: grid; grid-template-columns: 3fr 2fr; gap: 16px; margin-bottom: 20px; }
-
-        /* PANEL */
-        .panel {
-            background: var(--surface); border: 1px solid var(--border);
-            border-radius: 10px; padding: 22px;
+        .hero-inner {
+            position: relative; max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: flex-end;
+            gap: 32px; flex-wrap: wrap;
         }
-        .panel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
-        .panel-title { font-size: 14px; font-weight: 500; color: var(--text); }
-        .panel-action { font-size: 12px; color: var(--accent); text-decoration: none; cursor: pointer; transition: color 0.2s; }
-        .panel-action:hover { color: var(--gold); }
+        .hero-tag { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+        .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 4.5vw, 58px); font-weight: 300; line-height: 1.1; margin-bottom: 10px; }
+        .hero p { color: rgba(255,255,255,0.5); font-size: 13px; max-width: 460px; line-height: 1.7; }
+        .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; flex-shrink: 0; }
+        .btn-ghost { padding: 10px 22px; border: 1px solid rgba(255,255,255,0.22); border-radius: 999px; color: #fff; text-decoration: none; font-size: 12px; letter-spacing: 0.05em; transition: all 0.2s; }
+        .btn-ghost:hover { border-color: rgba(255,255,255,0.65); background: rgba(255,255,255,0.07); }
 
-        /* TABLE */
-        .data-table { width: 100%; border-collapse: collapse; }
-        .data-table th { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding: 0 0 12px; text-align: left; border-bottom: 1px solid var(--border); font-weight: 400; }
-        .data-table td { padding: 12px 0; font-size: 13px; border-bottom: 1px solid var(--border); color: var(--text); }
-        .data-table tr:last-child td { border-bottom: none; }
-        .data-table tr:hover td { color: rgba(232,230,225,1); }
+        /* MAIN */
+        main { max-width: 1200px; margin: 0 auto; padding: 40px 24px 80px; }
 
-        /* STATUS PILLS */
-        .pill { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 10px; letter-spacing: 0.05em; font-weight: 500; }
-        .pill-green { background: rgba(34,197,94,0.12); color: var(--green); }
-        .pill-amber { background: rgba(245,158,11,0.12); color: var(--amber); }
-        .pill-red { background: rgba(239,68,68,0.12); color: var(--red); }
-        .pill-blue { background: rgba(59,130,246,0.12); color: #60A5FA; }
-        .pill-gray { background: rgba(107,114,128,0.15); color: var(--muted); }
+        /* STAT STRIP */
+        .stat-strip {
+            display: grid; grid-template-columns: repeat(4,1fr);
+            background: var(--border); gap: 1px;
+            border: 1px solid var(--border); border-radius: 12px;
+            overflow: hidden; margin-bottom: 32px;
+        }
+        .stat { background: var(--card); padding: 22px 24px; display: flex; align-items: center; gap: 14px; transition: background 0.2s; cursor: default; }
+        .stat:hover { background: #f8f7f5; }
+        .stat-icon { width: 38px; height: 38px; border-radius: 9px; background: var(--sand); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .stat-icon svg { width: 17px; height: 17px; }
+        .stat-lbl { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+        .stat-val { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500; line-height: 1; }
 
-        /* LEAD LIST */
-        .lead-list { list-style: none; }
-        .lead-item { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--border); }
-        .lead-item:last-child { border-bottom: none; }
-        .lead-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--accent); font-weight: 500; flex-shrink: 0; }
-        .lead-name { font-size: 13px; font-weight: 400; }
-        .lead-model { font-size: 11px; color: var(--muted); }
-        .lead-meta { margin-left: auto; text-align: right; }
-        .lead-date { font-size: 11px; color: var(--muted); }
+        /* SECTION LABEL */
+        .slabel { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; margin-top: 32px; }
 
-        /* INVENTORY SUMMARY */
-        .inv-list { list-style: none; }
-        .inv-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
-        .inv-item:last-child { border-bottom: none; }
-        .inv-count { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; }
-        .inv-label { color: var(--muted); font-size: 12px; }
+        /* GRIDS */
+        .g3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+        .g2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+        .g3-1 { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; }
 
-        /* MINI CHART BARS */
-        .bar-chart { display: flex; align-items: flex-end; gap: 6px; height: 64px; margin-bottom: 8px; }
-        .bar { flex: 1; border-radius: 3px 3px 0 0; background: var(--gold); opacity: 0.7; transition: opacity 0.2s; }
-        .bar:hover { opacity: 1; }
-        .bar-labels { display: flex; gap: 6px; }
-        .bar-label { flex: 1; text-align: center; font-size: 9px; color: var(--muted); }
+        /* CARD */
+        .card {
+            background: var(--card); border-radius: 12px; padding: 26px;
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: box-shadow 0.25s, transform 0.25s;
+            animation: fadeUp 0.4s ease both;
+        }
+        .card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.07); transform: translateY(-2px); }
+        .card-eye { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+        .card h2 { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 500; margin-bottom: 6px; }
+        .card > p { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 18px; }
 
-        /* APPT LIST */
-        .appt-list { list-style: none; }
-        .appt-item { display: flex; align-items: flex-start; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--border); }
-        .appt-item:last-child { border-bottom: none; }
-        .appt-time { font-size: 11px; color: var(--muted); width: 48px; flex-shrink: 0; padding-top: 2px; }
-        .appt-name { font-size: 13px; }
-        .appt-type { font-size: 11px; color: var(--muted); }
-        .appt-status { margin-left: auto; flex-shrink: 0; }
+        /* VIN INPUT */
+        .vin-row { display: flex; gap: 8px; margin-bottom: 12px; }
+        .vin-input {
+            flex: 1; padding: 10px 14px; border: 1px solid rgba(0,0,0,0.15);
+            border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 13px;
+            outline: none; transition: border-color 0.2s; background: var(--warm-white);
+        }
+        .vin-input:focus { border-color: var(--navy); }
+        .vin-empty {
+            border: 1.5px dashed rgba(0,0,0,0.13); border-radius: 8px;
+            padding: 24px 16px; text-align: center; font-size: 13px; color: var(--muted); line-height: 1.6;
+        }
+        .vin-empty a { color: var(--navy); text-decoration: underline; text-underline-offset: 3px; }
+
+        /* SERVICE LIST */
+        .svc-list { list-style: none; margin-bottom: 18px; }
+        .svc-list li { display: flex; justify-content: space-between; align-items: center; padding: 11px 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 13px; }
+        .svc-list li:last-child { border-bottom: none; }
+        .svc-badge { font-size: 10px; color: var(--muted); background: var(--sand); padding: 3px 10px; border-radius: 999px; }
+        .svc-badge.soon { background: #FFF3CD; color: #856404; }
+
+        /* OFFER CARDS */
+        .offer-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+        .offer-item {
+            background: var(--sand); border-radius: 8px; padding: 12px 14px;
+            display: flex; justify-content: space-between; align-items: center; font-size: 13px;
+        }
+        .offer-tag { font-size: 10px; letter-spacing: 0.06em; background: var(--navy); color: #fff; padding: 3px 10px; border-radius: 999px; }
+        .offer-empty { border: 1.5px dashed rgba(0,0,0,0.13); border-radius: 8px; padding: 20px; text-align: center; font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 14px; }
+
+        /* ACTIVITY */
+        .act-list { list-style: none; }
+        .act-list li { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 13px; gap: 12px; }
+        .act-list li:last-child { border-bottom: none; }
+        .act-tag { font-size: 11px; color: var(--muted); white-space: nowrap; }
+        .act-link { font-size: 11px; color: var(--navy); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; white-space: nowrap; }
+
+        /* PREFS */
+        .pref-list { list-style: none; }
+        .pref-list li { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+        .pref-list li:last-child { border-bottom: none; }
+        .pref-lbl { font-size: 13px; margin-bottom: 2px; }
+        .pref-sub { font-size: 11px; color: var(--muted); }
+        .pref-btn { font-size: 11px; padding: 5px 14px; border-radius: 999px; border: 1px solid rgba(0,0,0,0.2); cursor: pointer; background: transparent; transition: all 0.2s; white-space: nowrap; }
+        .pref-btn:hover { background: var(--sand); border-color: var(--navy); }
+
+        /* LINKS GRID */
+        .links-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+        .link-tile {
+            display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--navy);
+            background: var(--card); border: 1px solid rgba(0,0,0,0.06); border-radius: 10px;
+            padding: 16px 20px; font-size: 13px;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
+        .link-tile:hover { border-color: var(--navy); box-shadow: 0 4px 14px rgba(0,0,0,0.06); transform: translateY(-1px); }
+        .link-tile svg { width: 15px; height: 15px; opacity: 0.4; flex-shrink: 0; }
 
         /* FOOTER */
-        footer {
-            background: rgba(13,17,23,0.95);
-            border-top: 1px solid var(--border);
-            padding: 18px 32px;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .ft-left { font-size: 11px; color: var(--muted); }
-        .ft-links { display: flex; gap: 20px; }
-        .ft-links a { font-size: 11px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-        .ft-links a:hover { color: var(--accent); }
+        footer { background: var(--navy); color: #fff; }
+        .ft-top { display: flex; justify-content: space-between; align-items: center; padding: 18px 48px; border-bottom: 1px solid rgba(180,177,162,0.18); }
+        .ft-top p { font-size: 12px; opacity: 0.6; letter-spacing: 0.05em; }
+        .ft-top select { background: transparent; color: rgba(255,255,255,0.55); border: none; font-size: 12px; cursor: pointer; }
+        .ft-body { padding: 44px 48px 0; display: grid; grid-template-columns: repeat(4,1fr); gap: 36px; }
+        .ft-col h3 { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 18px; }
+        .ft-col a { display: block; font-size: 13px; color: rgba(180,177,162,0.8); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
+        .ft-col a:hover { color: rgba(255,255,255,0.9); }
+        .ft-social { padding: 32px 48px 22px; }
+        .ft-social h3 { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 14px; }
+        .social-row { display: flex; gap: 16px; }
+        .social-row a { color: rgba(180,177,162,0.65); transition: color 0.2s; display: flex; }
+        .social-row a:hover { color: rgba(255,255,255,0.9); }
+        .ft-bottom { border-top: 1px solid rgba(180,177,162,0.12); padding: 18px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .ft-links { display: flex; gap: 20px; flex-wrap: wrap; }
+        .ft-links a { font-size: 11px; color: rgba(180,177,162,0.55); text-decoration: none; transition: color 0.2s; }
+        .ft-links a:hover { color: rgba(255,255,255,0.8); }
+        .ft-copy { font-size: 11px; color: rgba(180,177,162,0.3); }
 
         /* MOBILE OVERLAY */
-        .mob-overlay { display: none; position: fixed; inset: 0; background: #EFEDE9; z-index: 200; padding: 32px 24px; flex-direction: column; gap: 4px; overflow-y: auto; }
+        .mob-overlay { display: none; position: fixed; inset: 0; background: var(--navy); z-index: 200; padding: 48px 32px; flex-direction: column; gap: 26px; }
         .mob-overlay.open { display: flex; }
-        .mob-close { align-self: flex-end; background: none; border: none; color: var(--navy); cursor: pointer; opacity: 0.55; margin-bottom: 16px; }
-        .mob-nav-link { display: flex; align-items: center; gap: 12px; padding: 12px 0; font-size: 15px; color: var(--navy); opacity: 0.7; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.08); }
-        .mob-nav-link svg { width: 16px; height: 16px; }
+        .mob-overlay a { font-size: 26px; font-family: 'Cormorant Garamond', serif; color: #fff; text-decoration: none; font-weight: 300; opacity: 0.85; }
+        .mob-close { align-self: flex-end; background: none; border: none; color: #fff; cursor: pointer; opacity: 0.55; margin-bottom: 8px; }
 
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-        .panel { animation: fadeUp 0.35s ease both; }
-        .kpi { animation: fadeUp 0.35s ease both; }
-        .kpi:nth-child(1){animation-delay:.04s} .kpi:nth-child(2){animation-delay:.08s} .kpi:nth-child(3){animation-delay:.12s} .kpi:nth-child(4){animation-delay:.16s}
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+        .card:nth-child(1){animation-delay:.04s} .card:nth-child(2){animation-delay:.09s} .card:nth-child(3){animation-delay:.14s}
 
-        @media(max-width:1100px) {
-            .sidebar { display: none; }
-            .hamburger { display: flex; }
-            .kpi-strip { grid-template-columns: repeat(2,1fr); }
-            .g-wide { grid-template-columns: 1fr; }
-            .g2,.g3 { grid-template-columns: 1fr; }
-            .content { padding: 20px 16px; }
+        @media(max-width:1024px){
+            header{padding:0 24px;} nav{display:none;} .hamburger{display:flex;}
+            .hero{padding:44px 24px 36px;} .hero-inner{flex-direction:column;align-items:flex-start;}
+            main{padding:24px 16px 60px;}
+            .g3,.g2,.g3-1{grid-template-columns:1fr;}
+            .stat-strip{grid-template-columns:repeat(2,1fr);}
+            .links-grid{grid-template-columns:repeat(2,1fr);}
+            .ft-body{grid-template-columns:repeat(2,1fr);padding:32px 24px 0;}
+            .ft-top,.ft-social,.ft-bottom{padding-left:24px;padding-right:24px;}
         }
-        @media(max-width:600px) {
-            header { padding: 0 16px; }
-            .kpi-strip { grid-template-columns: 1fr; }
-            footer { flex-direction: column; gap: 12px; align-items: flex-start; }
+        @media(max-width:600px){
+            .stat-strip{grid-template-columns:1fr;}
+            .links-grid{grid-template-columns:1fr;}
+            .ft-body{grid-template-columns:1fr;}
         }
     </style>
 </head>
 <body>
 
-<!-- MOBILE OVERLAY -->
 <div class="mob-overlay" id="mobMenu">
     <button class="mob-close" id="mobClose">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6L18 18M6 18L18 6"/></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6L18 18M6 18L18 6"/></svg>
     </button>
-    <a href="#" class="mob-nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg> Overview</a>
-    <a href="#" class="mob-nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg> Leads</a>
-    <a href="#" class="mob-nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Inventory</a>
-    <a href="#" class="mob-nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Service</a>
-    <a href="#" class="mob-nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg> Sales</a>
+    <a href="#">Vehicles</a>
+    <a href="#">Shop</a>
+    <a href="retailer.html">Retailers</a>
+    <a href="#">Owners</a>
+    <a href="#">Services</a>
+    <a href="build.html" style="color:var(--accent);margin-top:8px;">Build ▷</a>
 </div>
 
-<!-- HEADER -->
 <header>
     <a href="index.html" class="logo">
         <img src="images/Home/favicon_152x152.avif" alt="INFINITI">
-        <div class="logo-text">
-            <span>INFINITI</span>
-            <span>Retailer Portal</span>
-        </div>
+        <span>INFINITI</span>
     </a>
-    <div class="header-right">
-        <a href="#">Help</a>
-        <a href="#">Docs</a>
-        <div class="notif-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
-            <span class="notif-dot"></span>
-        </div>
+    <nav>
+        <a href="#">Vehicles</a>
+        <a href="#">Shop</a>
+        <a href="retailer.html">Retailers</a>
+        <a href="#">Owners</a>
+        <a href="#">Services</a>
+        <a href="#">News</a>
         <div class="user-chip">
-            <div class="user-avatar">MR</div>
-            <span>Marc R.</span>
+            <div class="user-avatar">JD</div>
+            <span>Jane Doe</span>
         </div>
-        <button class="hamburger" id="hamburger">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
-    </div>
+    </nav>
+    <button class="hamburger" id="hamburger">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
 </header>
 
-<!-- MAIN LAYOUT -->
-<div class="layout">
+<section class="hero">
+    <div class="hero-inner">
+        <div>
+            <p class="hero-tag">My INFINITI · Owner Portal</p>
+            <h1>Welcome back,<br>Jane</h1>
+            <p>Everything about your ownership experience — in one refined place.</p>
+        </div>
+        <div class="hero-actions">
+            <a href="search-inventory.html" class="btn-ghost">Search Inventory</a>
+            <a href="offers.html" class="btn-ghost">My Offers</a>
+            <a href="retailer.html" class="btn-ghost">Find Retailer</a>
+        </div>
+    </div>
+</section>
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-        <div class="sidebar-section">
-            <p class="sidebar-section-label">Main</p>
-            <a class="sidebar-link active" href="#">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-                Overview
-            </a>
-            <a class="sidebar-link" href="#">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-                Leads & Customers
-                <span class="sidebar-badge">5</span>
-            </a>
-            <a class="sidebar-link" href="#">
+<main>
+
+    <!-- STAT STRIP -->
+    <div class="stat-strip">
+        <div class="stat">
+            <div class="stat-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-                Inventory
-            </a>
-            <a class="sidebar-link" href="#">
+            </div>
+            <div>
+                <p class="stat-lbl">Vehicles</p>
+                <p class="stat-val">0</p>
+            </div>
+        </div>
+        <div class="stat">
+            <div class="stat-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-                Appointments
-                <span class="sidebar-badge red">2</span>
-            </a>
-            <a class="sidebar-link" href="#">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-                Service Orders
-            </a>
-        </div>
-        <div class="sidebar-section">
-            <p class="sidebar-section-label">Reports</p>
-            <a class="sidebar-link" href="#">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
-                Sales Performance
-            </a>
-            <a class="sidebar-link" href="#">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-                Activity Log
-            </a>
-        </div>
-        <div class="sidebar-section">
-            <p class="sidebar-section-label">Admin</p>
-            <a class="sidebar-link" href="#">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-                Staff Accounts
-            </a>
-            <a class="sidebar-link" href="#">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg>
-                Settings
-            </a>
-        </div>
-    </aside>
-
-    <!-- CONTENT -->
-    <main class="content">
-
-        <!-- PAGE HEADER -->
-        <div class="page-header">
-            <div class="page-header-row">
-                <div>
-                    <h1>Good morning, Marc</h1>
-                    <p>INFINITI of Downtown Toronto &nbsp;·&nbsp; Monday, March 8, 2026</p>
-                </div>
-                <div class="header-actions">
-                    <button class="btn btn-secondary">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                        Export
-                    </button>
-                    <button class="btn btn-gold">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
-                        Add Lead
-                    </button>
-                </div>
+            </div>
+            <div>
+                <p class="stat-lbl">Upcoming Service</p>
+                <p class="stat-val">2</p>
             </div>
         </div>
-
-        <!-- KPIs -->
-        <div class="kpi-strip">
-            <div class="kpi">
-                <p class="kpi-label">Monthly Sales</p>
-                <p class="kpi-value">14</p>
-                <p class="kpi-delta up">↑ 16% vs last month</p>
+        <div class="stat">
+            <div class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
             </div>
-            <div class="kpi">
-                <p class="kpi-label">Revenue MTD</p>
-                <p class="kpi-value">$1.2M</p>
-                <p class="kpi-delta up">↑ 8% vs target</p>
-            </div>
-            <div class="kpi">
-                <p class="kpi-label">Active Leads</p>
-                <p class="kpi-value">47</p>
-                <p class="kpi-delta neutral">5 new this week</p>
-            </div>
-            <div class="kpi">
-                <p class="kpi-label">Inventory Units</p>
-                <p class="kpi-value">83</p>
-                <p class="kpi-delta down">↓ 4 units this week</p>
+            <div>
+                <p class="stat-lbl">Active Offers</p>
+                <p class="stat-val">3</p>
             </div>
         </div>
-
-        <!-- SALES CHART + APPOINTMENTS -->
-        <div class="g-wide">
-            <div class="panel">
-                <div class="panel-header">
-                    <span class="panel-title">Sales This Month</span>
-                    <a class="panel-action">Full report →</a>
-                </div>
-                <div class="bar-chart">
-                    <div class="bar" style="height:40%"></div>
-                    <div class="bar" style="height:55%"></div>
-                    <div class="bar" style="height:35%"></div>
-                    <div class="bar" style="height:70%"></div>
-                    <div class="bar" style="height:60%"></div>
-                    <div class="bar" style="height:80%"></div>
-                    <div class="bar" style="height:50%"></div>
-                    <div class="bar" style="height:90%"></div>
-                    <div class="bar" style="height:75%"></div>
-                    <div class="bar" style="height:100%; opacity:1;"></div>
-                </div>
-                <div class="bar-labels">
-                    <span class="bar-label">Mar 1</span>
-                    <span class="bar-label"></span>
-                    <span class="bar-label"></span>
-                    <span class="bar-label"></span>
-                    <span class="bar-label"></span>
-                    <span class="bar-label"></span>
-                    <span class="bar-label"></span>
-                    <span class="bar-label"></span>
-                    <span class="bar-label"></span>
-                    <span class="bar-label">Mar 8</span>
-                </div>
+        <div class="stat">
+            <div class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
-
-            <div class="panel">
-                <div class="panel-header">
-                    <span class="panel-title">Today's Appointments</span>
-                    <a class="panel-action">View all →</a>
-                </div>
-                <ul class="appt-list">
-                    <li class="appt-item">
-                        <span class="appt-time">9:00 AM</span>
-                        <div>
-                            <p class="appt-name">Sarah Chen</p>
-                            <p class="appt-type">QX60 Test Drive</p>
-                        </div>
-                        <span class="appt-status"><span class="pill pill-green">Confirmed</span></span>
-                    </li>
-                    <li class="appt-item">
-                        <span class="appt-time">10:30 AM</span>
-                        <div>
-                            <p class="appt-name">David Park</p>
-                            <p class="appt-type">Oil Change – QX50</p>
-                        </div>
-                        <span class="appt-status"><span class="pill pill-amber">In progress</span></span>
-                    </li>
-                    <li class="appt-item">
-                        <span class="appt-time">1:00 PM</span>
-                        <div>
-                            <p class="appt-name">Emily Watson</p>
-                            <p class="appt-type">Finance Consultation</p>
-                        </div>
-                        <span class="appt-status"><span class="pill pill-blue">Upcoming</span></span>
-                    </li>
-                    <li class="appt-item">
-                        <span class="appt-time">3:30 PM</span>
-                        <div>
-                            <p class="appt-name">James Okafor</p>
-                            <p class="appt-type">QX80 Delivery</p>
-                        </div>
-                        <span class="appt-status"><span class="pill pill-blue">Upcoming</span></span>
-                    </li>
-                </ul>
+            <div>
+                <p class="stat-lbl">Warranty Status</p>
+                <p class="stat-val">—</p>
             </div>
-        </div>
-
-        <!-- LEADS + INVENTORY -->
-        <div class="g2">
-            <div class="panel">
-                <div class="panel-header">
-                    <span class="panel-title">Recent Leads</span>
-                    <a class="panel-action">Manage leads →</a>
-                </div>
-                <ul class="lead-list">
-                    <li class="lead-item">
-                        <div class="lead-avatar">SC</div>
-                        <div>
-                            <p class="lead-name">Sarah Chen</p>
-                            <p class="lead-model">Interested: QX60 Autograph</p>
-                        </div>
-                        <div class="lead-meta">
-                            <span class="pill pill-amber">Hot</span>
-                            <p class="lead-date">2h ago</p>
-                        </div>
-                    </li>
-                    <li class="lead-item">
-                        <div class="lead-avatar">RL</div>
-                        <div>
-                            <p class="lead-name">Robert Lévesque</p>
-                            <p class="lead-model">Interested: QX55 Sensory</p>
-                        </div>
-                        <div class="lead-meta">
-                            <span class="pill pill-green">New</span>
-                            <p class="lead-date">5h ago</p>
-                        </div>
-                    </li>
-                    <li class="lead-item">
-                        <div class="lead-avatar">AM</div>
-                        <div>
-                            <p class="lead-name">Aisha Mohammed</p>
-                            <p class="lead-model">Interested: QX80 Premium</p>
-                        </div>
-                        <div class="lead-meta">
-                            <span class="pill pill-amber">Warm</span>
-                            <p class="lead-date">Yesterday</p>
-                        </div>
-                    </li>
-                    <li class="lead-item">
-                        <div class="lead-avatar">TN</div>
-                        <div>
-                            <p class="lead-name">Tom Nguyen</p>
-                            <p class="lead-model">Interested: QX50 Essential</p>
-                        </div>
-                        <div class="lead-meta">
-                            <span class="pill pill-gray">Cold</span>
-                            <p class="lead-date">3 days ago</p>
-                        </div>
-                    </li>
-                    <li class="lead-item">
-                        <div class="lead-avatar">JB</div>
-                        <div>
-                            <p class="lead-name">Julia Bouchard</p>
-                            <p class="lead-model">Certified Pre-Owned inquiry</p>
-                        </div>
-                        <div class="lead-meta">
-                            <span class="pill pill-green">New</span>
-                            <p class="lead-date">Today</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="panel">
-                <div class="panel-header">
-                    <span class="panel-title">Inventory Summary</span>
-                    <a class="panel-action">Manage →</a>
-                </div>
-                <ul class="inv-list">
-                    <li class="inv-item">
-                        <div>
-                            <p style="font-size:13px;">QX50</p>
-                            <p class="inv-label">Compact SUV</p>
-                        </div>
-                        <div style="text-align:right">
-                            <p class="inv-count">22</p>
-                            <span class="pill pill-green">In stock</span>
-                        </div>
-                    </li>
-                    <li class="inv-item">
-                        <div>
-                            <p style="font-size:13px;">QX55</p>
-                            <p class="inv-label">Coupe SUV</p>
-                        </div>
-                        <div style="text-align:right">
-                            <p class="inv-count">14</p>
-                            <span class="pill pill-green">In stock</span>
-                        </div>
-                    </li>
-                    <li class="inv-item">
-                        <div>
-                            <p style="font-size:13px;">QX60</p>
-                            <p class="inv-label">3-Row SUV</p>
-                        </div>
-                        <div style="text-align:right">
-                            <p class="inv-count">31</p>
-                            <span class="pill pill-green">In stock</span>
-                        </div>
-                    </li>
-                    <li class="inv-item">
-                        <div>
-                            <p style="font-size:13px;">QX80</p>
-                            <p class="inv-label">Full-size SUV</p>
-                        </div>
-                        <div style="text-align:right">
-                            <p class="inv-count">9</p>
-                            <span class="pill pill-amber">Low stock</span>
-                        </div>
-                    </li>
-                    <li class="inv-item">
-                        <div>
-                            <p style="font-size:13px;">Certified Pre-Owned</p>
-                            <p class="inv-label">All models</p>
-                        </div>
-                        <div style="text-align:right">
-                            <p class="inv-count">7</p>
-                            <span class="pill pill-red">Very low</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- RECENT SALES TABLE -->
-        <div class="panel" style="margin-bottom:0;">
-            <div class="panel-header">
-                <span class="panel-title">Recent Transactions</span>
-                <a class="panel-action">All transactions →</a>
-            </div>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Customer</th>
-                        <th>Vehicle</th>
-                        <th>Type</th>
-                        <th>Value</th>
-                        <th>Date</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Michael Torres</td>
-                        <td>2026 QX60 Autograph</td>
-                        <td>Purchase</td>
-                        <td>$72,400</td>
-                        <td>Mar 7</td>
-                        <td><span class="pill pill-green">Completed</span></td>
-                    </tr>
-                    <tr>
-                        <td>Priya Sharma</td>
-                        <td>2025 QX55 Sensory</td>
-                        <td>Lease</td>
-                        <td>$798/mo</td>
-                        <td>Mar 6</td>
-                        <td><span class="pill pill-green">Completed</span></td>
-                    </tr>
-                    <tr>
-                        <td>Lucas Tremblay</td>
-                        <td>2025 QX50 Essential</td>
-                        <td>Finance</td>
-                        <td>$51,900</td>
-                        <td>Mar 5</td>
-                        <td><span class="pill pill-amber">Pending</span></td>
-                    </tr>
-                    <tr>
-                        <td>Amara Johnson</td>
-                        <td>2026 QX80 Premium</td>
-                        <td>Purchase</td>
-                        <td>$98,700</td>
-                        <td>Mar 4</td>
-                        <td><span class="pill pill-green">Completed</span></td>
-                    </tr>
-                    <tr>
-                        <td>François Gagnon</td>
-                        <td>CPO 2024 QX60</td>
-                        <td>Purchase</td>
-                        <td>$44,200</td>
-                        <td>Mar 3</td>
-                        <td><span class="pill pill-red">Cancelled</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-    </main>
-</div>
-
-<!-- FOOTER — shared brand style -->
-<footer style="background:var(--navy);color:#fff;">
-    <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 48px;border-bottom:1px solid rgba(180,177,162,0.18);">
-        <p style="font-size:12px;opacity:0.6;letter-spacing:0.05em;">INFINITI Canada &nbsp;|&nbsp; Luxury Cars, SUVs & Crossovers</p>
-        <select style="background:transparent;color:rgba(255,255,255,0.55);border:none;font-size:12px;cursor:pointer;"><option>English</option><option>French</option></select>
-    </div>
-    <div style="padding:44px 48px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:36px;">
-        <div>
-            <h3 style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:18px;">Learn</h3>
-            <a href="#" style="display:block;font-size:13px;color:rgba(180,177,162,0.8);text-decoration:none;padding:4px 0;">All Vehicles</a>
-            <a href="#" style="display:block;font-size:13px;color:rgba(180,177,162,0.8);text-decoration:none;padding:4px 0;">Future & Concept</a>
-            <a href="#" style="display:block;font-size:13px;color:rgba(180,177,162,0.8);text-decoration:none;padding:4px 0;">INFINITI Distinction™</a>
-            <a href="#" style="display:block;font-size:13px;color:rgba(180,177,162,0.8);text-decoration:none;padding:4px 0;">FAQs</a>
-        </div>
-        <div>
-            <h3 style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:18px;">Shop</h3>
-            <a href="build.html" style="display:block;font-size:13px;color:rgba(180,177,162,0.8);text-decoration:none;padding:4px 0;">Build & Price</a>
-            <a href="search-inventory.html" style="display:block;font-size:13px;color:rgba(180,177,162,0.8);text-decoration:none;padding:4px 0;">Search Inventory</a>
-            <a href="offers.html" style="display:block;font-size:13px;color:rgba(180,177,162,0.8);text-decoration:none;padding:4px 0;">Special Offers</a>
-            <a href="#" style="display:block;font-size:13px;color:rgba(180,177,162,0.8);text-decoration:none;padding:4px 0;">Certified Pre-Owned</a>
-        </div>
-        <div>
-            <h3 style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:18px;">Purchase</h3>
-            <a href="#" style="display:block;font-size:13px;color:rgba(180,177,162,0.8);text-decoration:none;padding:4px 0;">Financing & Leasing</a>
-            <a href="#" style="display:block;font-size:13px;color:rgba(180,177,162,0.8);text-decoration:none;padding:4px 0;">Payment Estimator</a>
-            <a href="#" style="display:block;font-size:13px;color:rgba(180,177,162,0.8);text-decoration:none;padding:4px 0;">Get Pre-Approved</a>
-            <a href="retailer.html" style="display:block;font-size:13px;color:rgba(180,177,162,0.8);text-decoration:none;padding:4px 0;">Locate a Retailer</a>
-        </div>
-        <div>
-            <h3 style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:18px;">Ownership</h3>
-            <a href="#" style="display:block;font-size:13px;color:rgba(180,177,162,0.8);text-decoration:none;padding:4px 0;">INFINITI Owners</a>
-            <a href="#" style="display:block;font-size:13px;color:rgba(180,177,162,0.8);text-decoration:none;padding:4px 0;">Financial Services</a>
-            <a href="#" style="display:block;font-size:13px;color:rgba(180,177,162,0.8);text-decoration:none;padding:4px 0;">Service & Maintenance</a>
-            <a href="#" style="display:block;font-size:13px;color:rgba(180,177,162,0.8);text-decoration:none;padding:4px 0;">Roadside Assistance</a>
         </div>
     </div>
-    <div style="padding:32px 48px 22px;">
-        <h3 style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:14px;">Follow INFINITI</h3>
-        <div style="display:flex;gap:16px;">
-            <a href="#" style="color:rgba(180,177,162,0.65);transition:color 0.2s;display:flex;"><svg height="20" fill="currentColor" viewBox="0 0 640 640"><path d="M320.3 205C256.8 204.8 205.2 256.2 205 319.7C204.8 383.2 256.2 434.8 319.7 435C383.2 435.2 434.8 383.8 435 320.3C435.2 256.8 383.8 205.2 320.3 205zM542.8 227.5C541.1 191.6 532.9 159.8 506.6 133.6C480.4 107.4 448.6 99.2 412.7 97.4C375.7 95.3 264.8 95.3 227.8 97.4C192 99.1 160.2 107.3 133.9 133.5C107.6 159.7 99.5 191.5 97.7 227.4C95.6 264.4 95.6 375.3 97.7 412.3C99.4 448.2 107.6 480 133.9 506.2C160.2 532.4 191.9 540.6 227.8 542.4C264.8 544.5 375.7 544.5 412.7 542.4C448.6 540.7 480.4 532.5 506.6 506.2C532.8 480 541 448.2 542.8 412.3C544.9 375.3 544.9 264.5 542.8 227.5z"/></svg></a>
-            <a href="#" style="color:rgba(180,177,162,0.65);transition:color 0.2s;display:flex;"><svg height="20" fill="currentColor" viewBox="0 0 640 640"><path d="M240 363.3L240 576L356 576L356 363.3L442.5 363.3L460.5 265.5L356 265.5L356 230.9C356 179.2 376.3 159.4 428.7 159.4C445 159.4 458.1 159.8 465.7 160.6L465.7 71.9C451.4 68 416.4 64 396.2 64C289.3 64 240 114.5 240 223.4L240 265.5L174 265.5L174 363.3L240 363.3z"/></svg></a>
-            <a href="#" style="color:rgba(180,177,162,0.65);transition:color 0.2s;display:flex;"><svg height="20" fill="currentColor" viewBox="0 0 640 640"><path d="M196.3 512L103.4 512L103.4 212.9L196.3 212.9L196.3 512zM149.8 172.1C120.1 172.1 96 147.5 96 117.8C96 103.5 101.7 89.9 111.8 79.8C121.9 69.7 135.6 64 149.8 64C164 64 177.7 69.7 187.8 79.8C197.9 89.9 203.6 103.6 203.6 117.8C203.6 147.5 179.5 172.1 149.8 172.1zM543.9 512L451.2 512L451.2 366.4C451.2 331.7 450.5 287.2 402.9 287.2C354.6 287.2 347.2 324.9 347.2 363.9L347.2 512L254.4 512L254.4 212.9L343.5 212.9L343.5 253.7L344.8 253.7C357.2 230.2 387.5 205.4 432.7 205.4C526.7 205.4 544 267.3 544 347.7L544 512L543.9 512z"/></svg></a>
+
+    <!-- ROW 1 -->
+    <p class="slabel">My Vehicles</p>
+    <div class="g3">
+        <div class="card">
+            <p class="card-eye">Garage</p>
+            <h2>My Vehicles</h2>
+            <p>Link your INFINITI by VIN to access service history, recalls and more.</p>
+            <div class="vin-row">
+                <input class="vin-input" type="text" placeholder="Enter VIN number…">
+                <button class="btn-pill btn-dark">Add</button>
+            </div>
+            <div class="vin-empty">
+                No vehicles linked yet.<br>
+                <a href="#">How do I find my VIN?</a>
+            </div>
+        </div>
+        <div class="card">
+            <p class="card-eye">Maintenance</p>
+            <h2>Upcoming Service</h2>
+            <p>Stay ahead of maintenance to keep your INFINITI at its peak.</p>
+            <ul class="svc-list">
+                <li><span>Oil & filter change</span><span class="svc-badge soon">Due soon</span></li>
+                <li><span>Tire rotation</span><span class="svc-badge">In 3 months</span></li>
+                <li><span>Brake inspection</span><span class="svc-badge">In 6 months</span></li>
+            </ul>
+            <button class="btn-pill btn-dark">Schedule Service</button>
+        </div>
+        <div class="card">
+            <p class="card-eye">Offers</p>
+            <h2>Offers For You</h2>
+            <p>Personalized deals based on your vehicle and preferences.</p>
+            <div class="offer-list">
+                <div class="offer-item">
+                    <span>0.9% APR Financing</span>
+                    <span class="offer-tag">New</span>
+                </div>
+                <div class="offer-item">
+                    <span>Free tire rotation</span>
+                    <span class="offer-tag">Service</span>
+                </div>
+                <div class="offer-item">
+                    <span>$500 loyalty bonus</span>
+                    <span class="offer-tag">Loyalty</span>
+                </div>
+            </div>
+            <a href="offers.html" class="btn-pill btn-outline" style="display:inline-block;">View All Offers</a>
         </div>
     </div>
-    <div style="border-top:1px solid rgba(180,177,162,0.12);padding:18px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-        <div style="display:flex;gap:20px;flex-wrap:wrap;">
-            <a href="#" style="font-size:11px;color:rgba(180,177,162,0.55);text-decoration:none;">INFINITI Worldwide</a>
-            <a href="#" style="font-size:11px;color:rgba(180,177,162,0.55);text-decoration:none;">Careers</a>
-            <a href="#" style="font-size:11px;color:rgba(180,177,162,0.55);text-decoration:none;">Accessibility</a>
-            <a href="#" style="font-size:11px;color:rgba(180,177,162,0.55);text-decoration:none;">Privacy Policy</a>
-            <a href="#" style="font-size:11px;color:rgba(180,177,162,0.55);text-decoration:none;">Legal</a>
-            <a href="#" style="font-size:11px;color:rgba(180,177,162,0.55);text-decoration:none;">Cookies</a>
+
+    <!-- ROW 2 -->
+    <p class="slabel">Activity & Settings</p>
+    <div class="g2">
+        <div class="card">
+            <p class="card-eye">History</p>
+            <h2>Recent Activity</h2>
+            <ul class="act-list">
+                <li><span>Account created</span><span class="act-tag">Just now</span></li>
+                <li><span>Profile incomplete</span><span class="act-link">Complete profile →</span></li>
+                <li><span>No vehicles linked</span><span class="act-link">Add vehicle →</span></li>
+                <li><span>No service history</span><span class="act-tag">Schedule first service</span></li>
+            </ul>
         </div>
-        <p style="font-size:11px;color:rgba(180,177,162,0.3);">© INFINITI Canada 2026</p>
+        <div class="card">
+            <p class="card-eye">Settings</p>
+            <h2>Account Preferences</h2>
+            <ul class="pref-list">
+                <li>
+                    <div><p class="pref-lbl">Email notifications</p><p class="pref-sub">Service, offers and news updates.</p></div>
+                    <button class="pref-btn">Manage</button>
+                </li>
+                <li>
+                    <div><p class="pref-lbl">Preferred retailer</p><p class="pref-sub">Your most visited location.</p></div>
+                    <button class="pref-btn">Select</button>
+                </li>
+                <li>
+                    <div><p class="pref-lbl">Language</p><p class="pref-sub">Experience language preference.</p></div>
+                    <button class="pref-btn">English</button>
+                </li>
+                <li>
+                    <div><p class="pref-lbl">Communication consent</p><p class="pref-sub">Manage marketing permissions.</p></div>
+                    <button class="pref-btn">Update</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- RESOURCES -->
+    <p class="slabel">Resources</p>
+    <div class="links-grid">
+        <a href="#" class="link-tile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+            Maintenance Schedule
+        </a>
+        <a href="#" class="link-tile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            Owner's Manual
+        </a>
+        <a href="#" class="link-tile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            Roadside Assistance
+        </a>
+        <a href="#" class="link-tile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+            Navigation Updates
+        </a>
+        <a href="#" class="link-tile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            Extended Protection
+        </a>
+        <a href="#" class="link-tile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+            How-To Videos
+        </a>
+    </div>
+
+</main>
+
+<footer>
+    <div class="ft-top">
+        <p>INFINITI Canada &nbsp;|&nbsp; Luxury Cars, SUVs & Crossovers</p>
+        <select><option>English</option><option>French</option></select>
+    </div>
+    <div class="ft-body">
+        <div class="ft-col"><h3>Learn</h3><a href="#">All Vehicles</a><a href="#">Future & Concept</a><a href="#">INFINITI Distinction™</a><a href="#">INVISION Blog</a><a href="#">FAQs</a></div>
+        <div class="ft-col"><h3>Shop</h3><a href="build.html">Build & Price</a><a href="search-inventory.html">Search Inventory</a><a href="offers.html">Special Offers</a><a href="#">Certified Pre-Owned</a></div>
+        <div class="ft-col"><h3>Purchase</h3><a href="#">Financing & Leasing</a><a href="#">Payment Estimator</a><a href="#">Get Pre-Approved</a><a href="retailer.html">Locate a Retailer</a></div>
+        <div class="ft-col"><h3>Ownership</h3><a href="#">INFINITI Owners</a><a href="#">Financial Services</a><a href="#">Service & Maintenance</a><a href="#">Roadside Assistance</a></div>
+    </div>
+    <div class="ft-social">
+        <h3>Follow INFINITI</h3>
+        <div class="social-row">
+            <a href="#"><svg height="20" fill="currentColor" viewBox="0 0 640 640"><path d="M320.3 205C256.8 204.8 205.2 256.2 205 319.7C204.8 383.2 256.2 434.8 319.7 435C383.2 435.2 434.8 383.8 435 320.3C435.2 256.8 383.8 205.2 320.3 205zM542.8 227.5C541.1 191.6 532.9 159.8 506.6 133.6C480.4 107.4 448.6 99.2 412.7 97.4C375.7 95.3 264.8 95.3 227.8 97.4C192 99.1 160.2 107.3 133.9 133.5C107.6 159.7 99.5 191.5 97.7 227.4C95.6 264.4 95.6 375.3 97.7 412.3C99.4 448.2 107.6 480 133.9 506.2C160.2 532.4 191.9 540.6 227.8 542.4C264.8 544.5 375.7 544.5 412.7 542.4C448.6 540.7 480.4 532.5 506.6 506.2C532.8 480 541 448.2 542.8 412.3C544.9 375.3 544.9 264.5 542.8 227.5z"/></svg></a>
+            <a href="#"><svg height="20" fill="currentColor" viewBox="0 0 640 640"><path d="M240 363.3L240 576L356 576L356 363.3L442.5 363.3L460.5 265.5L356 265.5L356 230.9C356 179.2 376.3 159.4 428.7 159.4C445 159.4 458.1 159.8 465.7 160.6L465.7 71.9C451.4 68 416.4 64 396.2 64C289.3 64 240 114.5 240 223.4L240 265.5L174 265.5L174 363.3L240 363.3z"/></svg></a>
+            <a href="#"><svg height="20" fill="currentColor" viewBox="0 0 640 640"><path d="M196.3 512L103.4 512L103.4 212.9L196.3 212.9L196.3 512zM149.8 172.1C120.1 172.1 96 147.5 96 117.8C96 103.5 101.7 89.9 111.8 79.8C121.9 69.7 135.6 64 149.8 64C164 64 177.7 69.7 187.8 79.8C197.9 89.9 203.6 103.6 203.6 117.8C203.6 147.5 179.5 172.1 149.8 172.1zM543.9 512L451.2 512L451.2 366.4C451.2 331.7 450.5 287.2 402.9 287.2C354.6 287.2 347.2 324.9 347.2 363.9L347.2 512L254.4 512L254.4 212.9L343.5 212.9L343.5 253.7L344.8 253.7C357.2 230.2 387.5 205.4 432.7 205.4C526.7 205.4 544 267.3 544 347.7L544 512L543.9 512z"/></svg></a>
+        </div>
+    </div>
+    <div class="ft-bottom">
+        <div class="ft-links">
+            <a href="#">INFINITI Worldwide</a><a href="#">Careers</a><a href="#">Accessibility</a>
+            <a href="#">Contact Us</a><a href="#">Privacy Policy</a><a href="#">Legal</a><a href="#">Cookies</a>
+        </div>
+        <p class="ft-copy">© INFINITI Canada 2026</p>
     </div>
 </footer>
 
 <script>
     document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobMenu').classList.add('open'));
     document.getElementById('mobClose').addEventListener('click',()=>document.getElementById('mobMenu').classList.remove('open'));
-
-    document.querySelectorAll('.sidebar-link').forEach(link=>{
-        link.addEventListener('click',function(e){
-            e.preventDefault();
-            document.querySelectorAll('.sidebar-link').forEach(l=>l.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
 </script>
 </body>
 </html>
