@@ -933,12 +933,24 @@ video {
   width: 100%;
 }
 
+.w-64 {
+  width: 16rem;
+}
+
 .max-w-2xl {
   max-width: 42rem;
 }
 
+.flex-1 {
+  flex: 1 1 0%;
+}
+
 .flex-shrink {
   flex-shrink: 1;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
 }
 
 .border-collapse {
@@ -1218,6 +1230,14 @@ video {
   border-color: rgb(107 114 128 / var(--tw-border-opacity));
 }
 
+.border-\[rgb\(51\2c \)\] {
+  border-color: rgb(51,);
+}
+
+.border-\[rgb\(\)\] {
+  border-color: rgb();
+}
+
 .border-r-gray-500 {
   --tw-border-opacity: 1;
   border-right-color: rgb(107 114 128 / var(--tw-border-opacity));
@@ -1293,9 +1313,19 @@ video {
   background-color: rgb(28 35 48 / var(--tw-bg-opacity));
 }
 
+.bg-\[rgb\(35\2c 40\2c 48\)\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(35 40 48 / var(--tw-bg-opacity));
+}
+
 .bg-\[rgb\(36\2c 38\2c 37\)\] {
   --tw-bg-opacity: 1;
   background-color: rgb(36 38 37 / var(--tw-bg-opacity));
+}
+
+.bg-\[rgb\(48\2c 32\2c 38\)\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(48 32 38 / var(--tw-bg-opacity));
 }
 
 .bg-\[rgb\(49\2c 43\2c 31\)\] {
@@ -1545,6 +1575,10 @@ video {
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .font-infiniti {
   font-family: "Infiniti Brand Light", sans-serif;
 }
@@ -1698,6 +1732,11 @@ video {
   color: rgb(234 67 67 / var(--tw-text-opacity));
 }
 
+.text-\[rgb\(239\2c 68\2c 68\)\] {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
 .text-\[rgb\(245\2c 158\2c 11\)\] {
   --tw-text-opacity: 1;
   color: rgb(245 158 11 / var(--tw-text-opacity));
@@ -1711,6 +1750,11 @@ video {
 .text-\[rgb\(34\2c 196\2c 94\)\] {
   --tw-text-opacity: 1;
   color: rgb(34 196 94 / var(--tw-text-opacity));
+}
+
+.text-\[rgb\(34\2c 197\2c 94\)\] {
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity));
 }
 
 .text-\[rgb\(76\2c 81\2c 96\)\] {
@@ -1755,6 +1799,11 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-\[rgb\(221\2c 219\2c 216\)\] {
+  --tw-text-opacity: 1;
+  color: rgb(221 219 216 / var(--tw-text-opacity));
 }
 
 .underline {
